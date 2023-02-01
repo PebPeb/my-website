@@ -1,20 +1,33 @@
+import React from 'react';
 import { Link } from "react-router-dom";
+import "./NavBar.css";
 
 function NavBar() {
   return (
-    <nav style={{ display: "flex", justifyContent: "flex-end" }}>
-      <ul style={{ listStyle: "none" }}>
+    <nav className="navbar">
+      <ul>
         <li>
-          <Link to="/">Home</Link>
+          <div className="tool-bar-title">Bryce Keen</div>
+        </li>
+        <li style={{ marginLeft: 'auto' }}>
+          <Link to="/" style={{textDecoration: 'none'}}>
+            <div className="link-container">Home</div>
+          </Link>
+         </li>
+        <li>
+          <Link to="/about" style={{textDecoration: 'none'}}>
+            <div className="link-container">About</div>
+          </Link>
         </li>
         <li>
-          <Link to="/about">About</Link>
+          <Link to="/services" style={{textDecoration: 'none'}}>
+            <div className="link-container">Services</div>
+          </Link>
         </li>
         <li>
-          <Link to="/services">Services</Link>
-        </li>
-        <li>
-          <Link to="/contact">Contact</Link>
+          <Link to="/contact" style={{textDecoration: 'none'}}>
+            <div className="link-container">Contact</div>
+          </Link>
         </li>
       </ul>
     </nav>

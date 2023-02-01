@@ -12,8 +12,7 @@ import './CardLandscape.css';
         link - 
 */
 function CardLandscape(props) {
-
-
+    
     return (
         <div className={"card-landscape " + props.direction}>
             <a href="#" style={{width: '40%'}}>

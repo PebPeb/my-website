@@ -6,8 +6,8 @@ function ServicesPage() {
   return (
     <div>
       <NavBar />
-      <h1>Our Services</h1>
-      <p>Discover the services we offer to our clients.</p>
+      <h1>Services</h1>
+      <p>Slapping Services</p>
     </div>
   );
 }
