@@ -36,7 +36,8 @@
 
     text-transform: uppercase;
     text-decoration: none;
-    font-family: "Franklin Gothic Medium";
+    font-family: "NavBar";
+    /*font-family: "Franklin Gothic Medium";*/
 
     transition: background-color 0.2s ease-in-out;
   }
@@ -58,4 +59,9 @@
     font-family: Georgia, 'Times New Roman', Times, serif;
     color: rgb(169, 177, 186);
     font-size: 24px;
+  }
+
+  @font-face {
+    font-family: NavBar;
+    src: url(../../assets/fonts/Franklin-Gothic-Medium-Regular.woff);
   }

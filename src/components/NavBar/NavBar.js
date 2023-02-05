@@ -20,11 +20,6 @@ function NavBar() {
           </Link>
         </li>
         <li>
-          <Link to="/services" style={{textDecoration: 'none'}}>
-            <div className="link-container">Services</div>
-          </Link>
-        </li>
-        <li>
           <Link to="/contact" style={{textDecoration: 'none'}}>
             <div className="link-container">Contact</div>
           </Link>
@@ -33,5 +28,13 @@ function NavBar() {
     </nav>
   );
 }
+
+/*
+        <li>
+          <Link to="/services" style={{textDecoration: 'none'}}>
+            <div className="link-container">Services</div>
+          </Link>
+        </li>
+*/
 
 export default NavBar;
