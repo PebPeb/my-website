@@ -4,7 +4,18 @@ import "./RISCV_Single_Cycle_CPU.css";
 import "../GeneralStyle.css";
 import NavBar from '../../components/NavBar/NavBar';
 import gigachad from "../../assets/gigachad.png";
+import rtd from "./test.html"
 
+function RISCV_Single_Cycle_CPU() {
+  return (
+    <div>
+      <NavBar />
+      <iframe src={rtd}></iframe>
+    </div>
+  );
+}
+
+/*
 
 function RISCV_Single_Cycle_CPU() {
 
@@ -25,5 +36,7 @@ function RISCV_Single_Cycle_CPU() {
     </div>
   );
 }
+
+*/
 
 export default RISCV_Single_Cycle_CPU;
