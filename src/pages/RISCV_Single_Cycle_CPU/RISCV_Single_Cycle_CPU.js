@@ -14,6 +14,8 @@ function RISCV_Single_Cycle_CPU() {
     in my field of not doing the expected. Now pull up your Huggies and wait, for the content\
     will come. :)";
 
+  window.location.href = 'test.html';
+
   return (
     <div>
       <NavBar />
