@@ -10,7 +10,7 @@ function AboutPage() {
     <div>
       <NavBar />
       <div className="general-content">
-        <h1>Me</h1>
+        <h1>About Me</h1>
         <img src={gigachad} width='300px'></img>
       </div>
     </div>

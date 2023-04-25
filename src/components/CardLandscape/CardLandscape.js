@@ -15,26 +15,55 @@ import './CardLandscape.css';
 */
 function CardLandscape(props) {
     
-    return (
-        <div className={"card-landscape " + props.direction}>
-            <a href="#" style={{width: '40%'}}>
-                <Link to={props.navTo} style={{textDecoration: 'none'}}>
-                    <img className="card-image" src={props.image}></img>
-                </Link>
-            </a>
-            <div className={"card-content-wrapper " + props.mode}>
-                <div className={"card-content " + props.mode}>
-                    <h1>{props.title}</h1>
-                    <p><span className="tab"></span>
-                        {props.text}
-                    </p>
-                    <Link to={props.navTo} style={{textDecoration: 'none'}}>
-                        <a href="#" class="button">Check It Out</a>
-                    </Link>
+
+    if (props.static_link) {
+        return (
+            <div className={"card-landscape " + props.direction}>
+                <a href="#" style={{width: '40%'}}>
+                    <a href={props.navTo} style={{textDecoration: 'none'}}>
+                        <img className="card-image" src={props.image}></img>
+                    </a>
+                </a>
+                <div className={"card-content-wrapper " + props.mode}>
+                    <div className={"card-content " + props.mode}>
+                        <h1>{props.title}</h1>
+                        <p><span className="tab"></span>
+                            {props.text}
+                        </p>
+                        <a href={props.navTo} style={{textDecoration: 'none'}}>
+                            <a href={props.navTo} class="button">Check It Out</a>
+                        </a>
+                    </div>
                 </div>
             </div>
-        </div>
-    );
+        );
+
+    }
+    else {
+        return (
+            <div className={"card-landscape " + props.direction}>
+                <a href="#" style={{width: '40%'}}>
+                    <Link to={props.navTo} style={{textDecoration: 'none'}}>
+                        <img className="card-image" src={props.image}></img>
+                    </Link>
+                </a>
+                <div className={"card-content-wrapper " + props.mode}>
+                    <div className={"card-content " + props.mode}>
+                        <h1>{props.title}</h1>
+                        <p><span className="tab"></span>
+                            {props.text}
+                        </p>
+                        <Link to={props.navTo} style={{textDecoration: 'none'}}>
+                            <a href="#" class="button">Check It Out</a>
+                        </Link>
+                    </div>
+                </div>
+            </div>
+        );
+    }
+
+
+    
 }
 
 export default CardLandscape;

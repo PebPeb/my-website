@@ -25,7 +25,6 @@ function HomePage() {
     My hope is to use what I have learned from this project to explore more \
     complicated designs and ideas!";
 
-
   return (
     <div>
       <NavBar />
@@ -34,7 +33,7 @@ function HomePage() {
         <div style={{height: '40px'}}></div>
 
         <CardLandscape title={Card1_Title} text={Card1_Text} direction="left" mode={mode} 
-          image={RISC_V} navTo="/RISCV_Single_Cycle_CPU">
+          image={RISC_V} navTo="/projects/Single-Cycle-RV32I.html" static_link={true}>
         </CardLandscape>
         <div style={{height: '40px'}}></div>
       </div>
