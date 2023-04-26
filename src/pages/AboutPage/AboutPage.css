@@ -9,8 +9,13 @@
     padding-right: 40px;
     padding-bottom: 40px;
 
-    border: 0;
+
 
     width: 660px; 
     background-color: #FFFFFF;
+}
+
+
+p {
+    color: rgb(73, 73, 73);
 }
