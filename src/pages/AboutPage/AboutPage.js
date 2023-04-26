@@ -18,7 +18,6 @@ function AboutPage() {
         <p>In vestibulum congue diam, at consectetur ante sollicitudin sit amet. Nulla facilisi. Sed venenatis nulla in dui eleifend, ac volutpat nibh cursus. Praesent ultricies ullamcorper dolor vitae bibendum. In hac habitasse platea dictumst. Aliquam euismod sit amet elit a bibendum. Curabitur non feugiat urna, non consequat felis. Sed tristique, ipsum eget pellentesque scelerisque, erat felis faucibus est, in molestie turpis orci eget nulla. Nam dapibus tincidunt nisl, eu rutrum leo mattis id. Duis mollis magna in erat placerat, non cursus massa tristique. Vivamus ut mi a metus facilisis ullamcorper. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Suspendisse et justo eget magna consectetur malesuada vitae ac nisl.</p>  
         <p>Phasellus lobortis odio at magna lacinia fringilla. Pellentesque eu ex varius, dapibus ante in, accumsan leo. Integer placerat lacinia nulla, quis vestibulum eros vehicula quis. Nullam laoreet diam nisl, quis sagittis erat tincidunt id. Sed viverra, justo et varius finibus, lectus enim gravida odio, eu sollicitudin elit elit non velit. Donec tristique orci quis justo suscipit, sed volutpat nunc luctus. Suspendisse in ipsum quam. Suspendisse vel enim dolor. Nulla sagittis auctor ipsum, ac viverra magna. Aenean eu lectus varius, hendrerit magna ut, eleifend neque.</p>
         <p>Quisque eget leo risus. Aenean pharetra, dui nec blandit tincidunt, libero risus consequat nisl, non vehicula</p>
-
       </div>
     </div>
   );
