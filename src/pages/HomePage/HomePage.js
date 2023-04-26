@@ -26,7 +26,7 @@ function HomePage() {
     complicated designs and ideas!";
 
   return (
-    <div>
+    <div style={{backgroundColor: '#efefef'}}>
       <NavBar />
       <TitleCard title="Bryce Keen" image={BlueCircuit}></TitleCard>
       <div className="general-content">
