@@ -1,0 +1,16 @@
+
+
+.about-content {
+    max-width: 940px;
+    margin-right: auto;
+    margin-left: auto;
+
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 40px;
+
+    border: 0;
+
+    width: 660px; 
+    background-color: #FFFFFF;
+}
