@@ -15,6 +15,11 @@ function NavBar() {
           </Link>
          </li>
         <li>
+          <Link to="/projects" style={{textDecoration: 'none'}}>
+            <div className="link-container">Projects</div>
+          </Link>
+        </li>
+        <li>
           <Link to="/about" style={{textDecoration: 'none'}}>
             <div className="link-container">About</div>
           </Link>

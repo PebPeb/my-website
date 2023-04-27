@@ -1,6 +1,4 @@
-
-
-.about-content {
+.projects-content {
     max-width: 940px;
     margin-right: auto;
     margin-left: auto;
@@ -16,14 +14,14 @@
 }
 
 
-.about-content p{
+.projects-content p{
     color: rgb(73, 73, 73);
 }
-.about-content h1{
+.projects-content h1{
     color: rgb(50, 50, 50);
 }
 
-.about-content hr {
+.projects-content hr {
     height: 1px;
     border-top: 1px solid #e1e4e5;
 

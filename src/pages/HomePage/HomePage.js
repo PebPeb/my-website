@@ -21,7 +21,7 @@ function HomePage() {
   let Card1_Title = "RISC-V Single Cycle CPU"
   let Card1_Text = "\
     In this project I designed a single cycle CPU from scratch! I utilized the RV32I instruction set \
-    for this project making my CPU a 32-bit computer. It might be primative in design but she's my baby. \
+    for this project making my CPU a 32-bit computer. It might be primitives in design but she's my baby. \
     My hope is to use what I have learned from this project to explore more \
     complicated designs and ideas!";
 

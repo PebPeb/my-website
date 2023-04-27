@@ -5,7 +5,7 @@ import HomePage from "./pages/HomePage/HomePage";
 import AboutPage from "./pages/AboutPage/AboutPage";
 import ServicesPage from "./pages/ServicesPage/ServicesPage";
 import ContactPage from "./pages/ContactPage/ContactPage";
-import RISCV_Single_Cycle_CPU from "./pages/RISCV_Single_Cycle_CPU/RISCV_Single_Cycle_CPU";
+import ProjectsPage from "./pages/ProjectsPage/ProjectsPage";
 
 function App() {
   
@@ -14,9 +14,9 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/about" element={<AboutPage />} />
+        <Route path="/projects" element={<ProjectsPage />} />
         <Route path="/services" element={<ServicesPage />} />
         <Route path="/contact" element={<ContactPage />} />
-        <Route path="/RISCV_Single_Cycle_CPU" element={<RISCV_Single_Cycle_CPU/>} />
       </Routes>
     </BrowserRouter>
   );
