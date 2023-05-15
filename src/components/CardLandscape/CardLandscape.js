@@ -1,4 +1,5 @@
 
+import React from "react";
 import { Link } from "react-router-dom";
 
 import './CardLandscape.css';
@@ -31,7 +32,7 @@ function CardLandscape(props) {
                             {props.text}
                         </p>
                         <a href={props.navTo} style={{textDecoration: 'none'}}>
-                            <a href={props.navTo} class="button">Check It Out</a>
+                            <a href={props.navTo} className="button">Check It Out</a>
                         </a>
                     </div>
                 </div>
@@ -54,7 +55,7 @@ function CardLandscape(props) {
                             {props.text}
                         </p>
                         <Link to={props.navTo} style={{textDecoration: 'none'}}>
-                            <a href="#" class="button">Check It Out</a>
+                            <a href="#" className="button">Check It Out</a>
                         </Link>
                     </div>
                 </div>

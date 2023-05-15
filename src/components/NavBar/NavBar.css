@@ -65,3 +65,7 @@
     font-family: NavBar;
     src: url(../../assets/fonts/Franklin-Gothic-Medium-Regular.woff);
   }
+
+  @media screen and (max-width:768px) {
+    
+  }

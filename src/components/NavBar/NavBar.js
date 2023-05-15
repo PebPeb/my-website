@@ -1,45 +1,55 @@
-import React from 'react';
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faBars } from '@fortawesome/free-solid-svg-icons'
+
 import "./NavBar.css";
 
-function NavBar() {
+
+function NavBar(props) {
+  const myLinks = [
+    {link: "/"            , title: "Home"},
+    {link: "/projects"    , title: "Projects"},
+    {link: "/about"       , title: "About"},
+    {link: "/contact"     , title: "Contact"}
+  ]
+
+  var once = true;
+
   return (
-    <nav className="navbar">
+    <nav className="navbar" style={props.external ? ({minWidth: 'auto'}) : ({})}>
       <ul>
         <li>
           <div className="tool-bar-title">Bryce Keen</div>
         </li>
-        <li style={{ marginLeft: 'auto' }}>
-          <Link to="/" style={{textDecoration: 'none'}}>
-            <div className="link-container">Home</div>
-          </Link>
-         </li>
-        <li>
-          <Link to="/projects" style={{textDecoration: 'none'}}>
-            <div className="link-container">Projects</div>
-          </Link>
+
+        <li style={{marginLeft: 'auto'}}>
+          <FontAwesomeIcon icon={faBars} />
         </li>
-        <li>
-          <Link to="/about" style={{textDecoration: 'none'}}>
-            <div className="link-container">About</div>
-          </Link>
-        </li>
-        <li>
-          <Link to="/contact" style={{textDecoration: 'none'}}>
-            <div className="link-container">Contact</div>
-          </Link>
-        </li>
+
+        {/* Using myLinks generate all the links on the tool bar */}
+        {myLinks.map((element, i) => 
+          <li key={i} style={once ? ({marginLeft: 'auto'}):({})}>             {/* Only give the margin to the first element*/}
+            {once = false}
+            {props.external ? 
+            (
+                <a href={element.link} style={{textDecoration: 'none'}}>
+                  <div className="link-container">{element.title}</div>
+                </a>
+            ) : 
+            (
+                <Link to={element.link} style={{textDecoration: 'none'}}>
+                  <div className="link-container">{element.title}</div>
+                </Link>
+            )}
+          </li>
+        )}
+
       </ul>
     </nav>
   );
+
 }
 
-/*
-        <li>
-          <Link to="/services" style={{textDecoration: 'none'}}>
-            <div className="link-container">Services</div>
-          </Link>
-        </li>
-*/
 
 export default NavBar;

@@ -6,7 +6,7 @@ import NavBar from '../../components/NavBar/NavBar';
 
 function ServicesPage() {
   return (
-    <div >
+    <div>
       <NavBar />
       <div className="general-content">
         <h1>Services</h1>
