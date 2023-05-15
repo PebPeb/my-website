@@ -38,13 +38,19 @@
     text-decoration: none;
     font-family: "NavBar";
     /*font-family: "Franklin Gothic Medium";*/
-
+    
     transition: background-color 0.2s ease-in-out;
   }
-
-
+  
+  
   .link-container:hover {
     background-color: rgba(252, 252, 252, 0.05);
+  }
+  
+  .mobile-bars {
+    color: rgb(169, 177, 186);
+    font-size: 28px;
+
   }
 
 
@@ -60,6 +66,8 @@
     color: rgb(169, 177, 186);
     font-size: 24px;
   }
+
+
 
   @font-face {
     font-family: NavBar;

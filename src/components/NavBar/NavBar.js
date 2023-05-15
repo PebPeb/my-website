@@ -24,12 +24,14 @@ function NavBar(props) {
         </li>
 
         <li style={{marginLeft: 'auto'}}>
-          <FontAwesomeIcon icon={faBars} />
+          <div className="link-container">
+            <FontAwesomeIcon className="mobile-bars" icon={faBars} />
+          </div>
         </li>
 
         {/* Using myLinks generate all the links on the tool bar */}
         {myLinks.map((element, i) => 
-          <li key={i} style={once ? ({marginLeft: 'auto'}):({})}>             {/* Only give the margin to the first element*/}
+          <li key={i} style={once ? ({marginLeft: 'auto'}):({})}>  {/* Only give the margin to the first element*/}
             {once = false}
             {props.external ? 
             (
