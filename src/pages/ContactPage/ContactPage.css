@@ -1,7 +1,7 @@
 
 
 .contact-content {
-    max-width: 940px;
+    max-width: 660px;
     margin-right: auto;
     margin-left: auto;
 
@@ -11,7 +11,6 @@
     padding-top: 1px;
 
 
-    width: 660px; 
     background-color: #FFFFFF;
 }
 
@@ -22,3 +21,5 @@
 .contact-content h1{
     color: rgb(50, 50, 50);
 }
+
+

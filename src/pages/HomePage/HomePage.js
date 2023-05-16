@@ -37,10 +37,6 @@ function HomePage() {
           image={RISC_V} navTo="/projects/Single-Cycle-RV32I.html" static_link={true}>
         </CardLandscape>
         <div className="spacing-div"></div>
-        <CardLandscape title={Card1_Title} text={Card1_Text} direction="right" mode={mode} 
-          image={RISC_V} navTo="/projects/Single-Cycle-RV32I.html" static_link={true}>
-        </CardLandscape>
-        <div className="spacing-div"></div>
       </div>
     </div>
   );
