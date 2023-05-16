@@ -25,20 +25,6 @@ function HomePage() {
     My hope is to use what I have learned from this project to explore more \
     complicated designs and ideas!";
 
-  // return (
-  //   <div style={{backgroundColor: '#efefef', minHeight: '100vh'}}>
-  //     <NavBar />
-  //     <TitleCard title="Bryce Keen" image={BlueCircuit}></TitleCard>
-  //     <div className="general-content">
-  //       <div style={{height: '40px'}}></div>
-
-  //       <CardLandscape title={Card1_Title} text={Card1_Text} direction="left" mode={mode} 
-  //         image={RISC_V} navTo="/projects/Single-Cycle-RV32I.html" static_link={true}>
-  //       </CardLandscape>
-  //       <div style={{height: '40px'}}></div>
-  //     </div>
-  //   </div>
-  // );
 
   return (
     <div className="background-container">
@@ -48,6 +34,10 @@ function HomePage() {
         <div className="spacing-div"></div>
 
         <CardLandscape title={Card1_Title} text={Card1_Text} direction="left" mode={mode} 
+          image={RISC_V} navTo="/projects/Single-Cycle-RV32I.html" static_link={true}>
+        </CardLandscape>
+        <div className="spacing-div"></div>
+        <CardLandscape title={Card1_Title} text={Card1_Text} direction="right" mode={mode} 
           image={RISC_V} navTo="/projects/Single-Cycle-RV32I.html" static_link={true}>
         </CardLandscape>
         <div className="spacing-div"></div>

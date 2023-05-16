@@ -16,7 +16,7 @@ body::-webkit-scrollbar-thumb:hover {
   min-height: 100vh;  
 }
 
-@media screen and (max-width:400px) {
+@media screen and (max-width:420px) {
   .background-container {
     background-color: #ffffff;
     min-height: 100vh;  
