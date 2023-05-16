@@ -20,7 +20,7 @@ function CardLandscape(props) {
     if (props.static_link) {
         return (
             <div className={"card-landscape " + props.direction}>
-                <a href="#" style={{width: '40%'}}>
+                <a href="#" id="a-container">
                     <a href={props.navTo} style={{textDecoration: 'none'}}>
                         <img className="card-image" src={props.image}></img>
                     </a>

@@ -100,17 +100,22 @@
 
     }
 
+    .logo {
+        top: 20px;
+    }
 }
 
 
 @media screen and (max-width:400px) {
     .title_003 {
-        height: 100px;
+        height: 110px;
     }
 
     .logo .title {
         font-size: 48px;
 
     }
+
+
 
 }

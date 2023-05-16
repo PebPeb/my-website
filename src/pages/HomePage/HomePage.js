@@ -41,16 +41,16 @@ function HomePage() {
   // );
 
   return (
-    <div style={{backgroundColor: '#efefef', minHeight: '100vh'}}>
+    <div className="background-container">
       <NavBar />
       <TitleCard title="Bryce Keen" image={BlueCircuit}></TitleCard>
       <div className="general-content">
-        <div style={{height: '40px'}}></div>
+        <div className="spacing-div"></div>
 
         <CardLandscape title={Card1_Title} text={Card1_Text} direction="left" mode={mode} 
           image={RISC_V} navTo="/projects/Single-Cycle-RV32I.html" static_link={true}>
         </CardLandscape>
-        <div style={{height: '40px'}}></div>
+        <div className="spacing-div"></div>
       </div>
     </div>
   );
