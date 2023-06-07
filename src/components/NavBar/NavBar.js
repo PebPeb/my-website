@@ -10,7 +10,7 @@ function NavBar(props) {
 
   const myLinks = [
     {link: "/"            , title: "Home"},
-    {link: "/projects"    , title: "Projects"},
+    //{link: "/projects"    , title: "Projects"},
     {link: "/about"       , title: "About"},
     {link: "/contact"     , title: "Contact"}
   ]

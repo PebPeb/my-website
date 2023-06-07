@@ -12,6 +12,11 @@ function ContactPage() {
       <div className="contact-content">
         <h1>Contact Baby</h1>
         <p>Give me a ring ring on the tellie tellie</p>
+        
+        <a href="mailto:bryce_keen@outlook.com">
+          <p>bryce_keen@outlook.com</p>
+        </a>
+
       </div>
     </div>
   );

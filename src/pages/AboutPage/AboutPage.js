@@ -7,6 +7,9 @@ import NavBar from '../../components/NavBar/NavBar';
 import keen from "../../assets/Keen-532.png";
 
 function AboutPage() {
+  
+
+
   return (
     <div style={{ backgroundColor: '#efefef', minHeight: '100vh' }}>
       <NavBar />
