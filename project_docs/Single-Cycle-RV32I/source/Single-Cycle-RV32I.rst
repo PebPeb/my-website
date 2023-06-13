@@ -9,6 +9,9 @@
 
 .. ------------------------------
 
+.. note::
+   This project is under active development.
+
 Introduction
 ============
 
@@ -18,8 +21,6 @@ This project assumes that the reader has a base line understanding of digital de
 
 This project implements majority of the instructions from the base integer instruction set from the RISC-V ISA. The project name follows the standard naming convention outlined in the RISC-V ISA. The RV stands for RISC-V followed by the width of the integer registers making this the 32-bit implementations of the base integer extension (I).
 
-.. note::
-   This project is under active development.
 
 .. toctree::
    :maxdepth: 2

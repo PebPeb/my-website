@@ -4,6 +4,8 @@
 
 .. ------------------------------
 
+.. note::
+   This project is under active development.
 
 ===============
 1. Introduction
@@ -19,9 +21,6 @@ hardware description languages specifically Verilog for this project would be he
 This project implements majority of the instructions from the base integer instruction set from the RISC-V ISA. The project 
 name follows the standard naming convention outlined in the RISC-V ISA. The RV stands for RISC-V followed by the width of 
 the integer registers making this the 32-bit implementations of the base integer extension (I).
-
-.. note::
-   This project is under active development.
 
 --------------
 What to Expect

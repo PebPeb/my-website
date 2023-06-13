@@ -4,6 +4,8 @@
 
 .. ------------------------------
 
+.. note::
+   This project is under active development.
 
 =================
 2. Design Choices
@@ -12,8 +14,6 @@
 This chapter plans to cover the design choices of the CPU. There are many different variables to take into account when 
 approaching this project. I hope to explain why I made my decisions, and the attended outcome of the design.
 
-.. note::
-   This project is under active development.
 
 ----------
 2.1 RISC-V
