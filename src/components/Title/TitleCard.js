@@ -1,6 +1,8 @@
 import React from "react";
 import './TitleCard.css';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
 
 function TitleCard(props){
     
@@ -9,6 +11,12 @@ function TitleCard(props){
             <div className="blur">
                 <div className="logo left">
                     <div className="title">{props.title}</div>
+                </div>
+
+                <div className="logo-link-bar">
+                    <a className="logo-link" href="https://github.com/PebPeb" style={{textDecoration: 'none'}}>
+                        <FontAwesomeIcon className="icon"icon={faGithub} />
+                    </a>
                 </div>
             </div>
         </div>
