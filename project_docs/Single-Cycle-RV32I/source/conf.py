@@ -34,7 +34,8 @@ version = release
 
 extensions = [	'myst_parser',
     		    'sphinx_rtd_theme',
-                'navbar']
+                'navbar',
+                'googleAnalytics']
 
 source_suffix = {
     '.rst': 'restructuredtext',
