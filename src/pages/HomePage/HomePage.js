@@ -28,7 +28,7 @@ function HomePage() {
 
   return (
     <div className="background-container">
-      <NavBar />
+      <NavBar/>
       <TitleCard title="Bryce Keen" image={BlueCircuit}></TitleCard>
       <div className="general-content">
         <div className="spacing-div"></div>
