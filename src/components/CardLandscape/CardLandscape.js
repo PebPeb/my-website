@@ -43,7 +43,7 @@ function CardLandscape(props) {
     else {
         return (
             <div className={"card-landscape " + props.direction}>
-                <a href="#" style={{width: '40%'}}>
+                <a href="#" id="a-container">
                     <Link to={props.navTo} style={{textDecoration: 'none'}}>
                         <img className="card-image" src={props.image}></img>
                     </Link>
