@@ -46,12 +46,12 @@ function HomePage() {
         <div className="spacing-div"></div>
 
         <CardLandscape title={Card_3_Title} text={Card_2_Text} direction="right" mode={mode} 
-          image={BEAN_2_High_Level_Diagram} navTo="https://github.com/PebPeb/BEAN-2" static_link={false}>
+          image={BEAN_2_High_Level_Diagram} navTo="https://github.com/PebPeb/BEAN-2" static_link={true}>
         </CardLandscape>
         <div className="spacing-div"></div>
 
         <CardLandscape title={Card_2_Title} text={Card_2_Text} direction="left" mode={mode} 
-          image={Retro_BEAN} navTo="https://github.com/PebPeb/BEAN-1" static_link={false}>
+          image={Retro_BEAN} navTo="https://github.com/PebPeb/BEAN-1" static_link={true}>
         </CardLandscape>
         <div className="spacing-div"></div>
 
