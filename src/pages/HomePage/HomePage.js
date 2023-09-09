@@ -10,6 +10,7 @@ import NavBar from '../../components/NavBar/NavBar';
 import BlueCircuit from "../../assets/BlueCircuit.png";
 import RISC_V from "../../assets/RISC_V_AI.png";
 import Retro_BEAN from "../../assets/BEAN_TEST.png"
+import BEAN_2_High_Level_Diagram from "../../assets/BEAN-2_High_Level_Diagram.png"
 
 function HomePage() {
   const [mode, setMode] = useState("light");
@@ -33,12 +34,20 @@ function HomePage() {
     shared memory between the instruction and data memory. \
     ";
 
+  let Card_3_Title = "BEAN-2"
+  let Card_3_Text = ""
+
 
   return (
     <div className="background-container">
       <NavBar/>
       <TitleCard title="Bryce Keen" image={BlueCircuit}></TitleCard>
       <div className="general-content">
+        <div className="spacing-div"></div>
+
+        <CardLandscape title={Card_3_Title} text={Card_2_Text} direction="right" mode={mode} 
+          image={BEAN_2_High_Level_Diagram} navTo="https://github.com/PebPeb/BEAN-2" static_link={false}>
+        </CardLandscape>
         <div className="spacing-div"></div>
 
         <CardLandscape title={Card_2_Title} text={Card_2_Text} direction="left" mode={mode} 
