@@ -35,7 +35,11 @@ function HomePage() {
     ";
 
   let Card_3_Title = "BEAN-2"
-  let Card_3_Text = ""
+  let Card_3_Text = "\
+    This project is a 32-bit single core 5-stage pipelined RISC-V CPU (RV32I). The architectural design of the \
+    system follows a Harvard style machine separating the instruction and data memory. \
+    This was an exciting challenge to develop, from the design to verification of the system.\
+  ";
 
 
   return (
@@ -45,7 +49,7 @@ function HomePage() {
       <div className="general-content">
         <div className="spacing-div"></div>
 
-        <CardLandscape title={Card_3_Title} text={Card_2_Text} direction="right" mode={mode} 
+        <CardLandscape title={Card_3_Title} text={Card_3_Text} direction="right" mode={mode} 
           image={BEAN_2_High_Level_Diagram} navTo="https://github.com/PebPeb/BEAN-2" static_link={true}>
         </CardLandscape>
         <div className="spacing-div"></div>
