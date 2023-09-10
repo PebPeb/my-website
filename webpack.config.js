@@ -33,7 +33,7 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, 'build'),     // Output path
-    filename: "[name]/[name].bundle.js",        // Name of bundle
+    filename: "[name]/[name].bundle.[contenthash].js",        // Name of bundle
   },
   module: {
     rules: [
