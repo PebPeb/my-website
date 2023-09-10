@@ -123,11 +123,11 @@
 }
 
 .card-landscape .card-content p {
-    line-height: 1.15;
+    line-height: 1.20;
     /* font-family: 'DejaVu Serif', serif; */
     font-family: "DejaVuSerif";
 
-    font-size: 16px;
+    font-size: 16.5px;
 
 
 }
@@ -170,6 +170,12 @@
 
 .centered-text {
     text-align: center;
+}
+
+.overflow-ellipsis {
+    white-space: nowrap; /* Prevent text from wrapping */
+    overflow: hidden;    /* Hide any overflowing text */
+    text-overflow: ellipsis; /* Display ellipsis (...) for overflow */
 }
 
 @media screen and (max-width:420px) {
