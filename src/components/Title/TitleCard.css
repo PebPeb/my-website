@@ -1,4 +1,11 @@
 
+
+@font-face {
+    font-family: DejaVuSerif-Bold;
+    src: url(../../assets/fonts/DejaVuSerif-Bold.ttf);
+}
+
+
 .title_003 {
     background-color: white;
     position: relative;
@@ -43,7 +50,7 @@
     transition: 0.3s;
     */
 
-    font-weight: bold;
+    /* font-weight: bold; */
 
     display: flex;
     width: fit-content;
@@ -60,11 +67,15 @@
     */
 
 }
-
+.letter-spacing {
+    letter-spacing: 8px; /* Adjust the value as needed */
+}
 
 .logo .title {
     color: rgb(255, 255, 255);
-    
+    font-family: 'DejaVuSerif-Bold';
+    /* font-family: "Testing"; */
+
     /*
     text-shadow: 2px 4px rgba(0,0,0,0.5);
     */
@@ -76,7 +87,7 @@
     /*
     text-transform: uppercase;
     */
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    /* font-family: Georgia, 'Times New Roman', Times, serif; */
     text-shadow: 4px 4px 0 rgb(8, 28, 46),
 				  2px 4px 0 rgb(8, 28, 46),
 				 4px 4px 0 rgb(8, 28, 46);
@@ -111,6 +122,10 @@
 
 
 @media screen and (max-width:768px) {
+    .letter-spacing {
+        letter-spacing: 7px; /* Adjust the value as needed */
+    }
+
     .title_003 {
         height: 150px;
     }
@@ -141,7 +156,12 @@
 }
 
 
-@media screen and (max-width:420px) {
+@media screen and (max-width:480px) {
+
+    .letter-spacing {
+        letter-spacing: 6px; /* Adjust the value as needed */
+    }
+
     .title_003 {
         height: 110px;
     }
