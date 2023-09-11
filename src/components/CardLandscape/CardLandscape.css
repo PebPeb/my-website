@@ -172,12 +172,6 @@
     text-align: center;
 }
 
-.overflow-ellipsis {
-    white-space: nowrap; /* Prevent text from wrapping */
-    overflow: hidden;    /* Hide any overflowing text */
-    text-overflow: ellipsis; /* Display ellipsis (...) for overflow */
-}
-
 @media screen and (max-width:420px) {
     
     .card-landscape {
@@ -362,6 +356,7 @@
     }
     
     .card-landscape .card-content h1 {
+        font-family: "DejaVuSerif";
         font-size: 28px;
         color: rgb(50, 50, 50);
     }
