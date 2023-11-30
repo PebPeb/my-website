@@ -9,8 +9,10 @@
 /coverage
 
 # production
+__pycache__
 /build
 /project_docs/**/build/
+/src/pelican/output
 
 
 # misc
