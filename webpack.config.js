@@ -76,6 +76,11 @@ module.exports = {
       filename: 'test.html',
       chunks: ['navbar']
     }),
+    new HtmlWebpackPlugin({
+      template: "src/pelican/output/index.html",
+      filename: 'test2.html',
+      chunks: ['navbar']
+    }),
     // new HtmlWebpackPlugin({
     //   template: "public/testing/test2.html",
     //   filename: 'testing/test2.html',
