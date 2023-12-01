@@ -1,6 +1,7 @@
 
 const path = require("path");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+// const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 /*
 let htmlPageNames = ['test'];
@@ -19,7 +20,7 @@ let htmlPageNames = ['Single-Cycle-RV32I'];
 let multipleHtmlPlugins = htmlPageNames.map(name => {
   return new HtmlWebpackPlugin({
     template: `public/projects/${name}.html`, // relative path to the HTML files
-    filename: `/projects/${name}.html`, // output HTML files
+    filename: `projects/${name}.html`, // output HTML files
     chunks: ['navbar'] // respective JS files (assuming you have corresponding chunk files)
   });
 });
@@ -33,7 +34,7 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, 'build'),     // Output path
-    filename: "[name]/[name].bundle.[contenthash].js",        // Name of bundle
+    filename: "bundles/[name]/[name].bundle.[contenthash].js",        // Name of bundle
   },
   module: {
     rules: [
@@ -81,18 +82,7 @@ module.exports = {
       filename: 'test2.html',
       chunks: ['navbar']
     }),
-    // new HtmlWebpackPlugin({
-    //   template: "public/testing/test2.html",
-    //   filename: 'testing/test2.html',
-    //   chunks: ['navbar']
-    // }),
-    // new HtmlWebpackPlugin({       // Do i need to add the supporting CSS and JS to the chunks?
-    //   template: "public/projects/Single-Cycle-RV32I.html",
-    //   filename: 'projects/Single-Cycle-RV32I.html',
-    //   chunks: ['navbar']
-    // })
-  
-  ],
+  ].concat(multipleHtmlPlugins),
   stats: {
     modules: true,
   },
