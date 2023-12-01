@@ -1,6 +1,8 @@
 
 const path = require("path");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+
 // const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 /*
@@ -67,6 +69,11 @@ module.exports = {
   
 
   plugins: [
+    new CopyWebpackPlugin({
+      patterns: [
+        {from: 'src/pelican/output', to: 'output'}
+      ]
+    }),
     new HtmlWebpackPlugin({
       template: "public/index.html",
       filename: 'index.html',
