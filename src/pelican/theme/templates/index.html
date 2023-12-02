@@ -1,8 +1,15 @@
 {% extends "base.html" %}
 
 {% block additional_includes %}
-    <link rel="stylesheet" href="{{ SITEURL }}/../../pages/GeneralStyle.css" type="text/css" />
-    <link rel="stylesheet" href="{{ SITEURL }}/../../index.css" type="text/css" />
+    <style>
+        /* Embed the contents of pages/GeneralStyle.css */
+        @import url('../../pages/GeneralStyle.css');
+
+        /* Embed the contents of index.css */
+        @import url('../../index.css');
+    </style>
+    <!-- <link rel="stylesheet" href="{{ SITEURL }}/../../pages/GeneralStyle.css" type="text/css" />
+    <link rel="stylesheet" href="{{ SITEURL }}/../../index.css" type="text/css" /> -->
 {% endblock additional_includes%}
 
 

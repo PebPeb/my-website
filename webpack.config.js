@@ -1,23 +1,13 @@
 
 const path = require("path");
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
-// const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+// const HtmlWebpackInlineSourcePlugin = require('html-webpack-inline-source-plugin');
+// var HtmlWebpackInlineSourcePlugin = require("@effortlessmotion/html-webpack-inline-source-plugin");
 
-/*
-let htmlPageNames = ['test'];
-let multipleHtmlPlugins = htmlPageNames.map(name => {
-  return new HtmlWebpackPlugin({
-    template: `./src/${name}.html`, // relative path to the HTML files
-    filename: `${name}.html`, // output HTML files
-    chunks: [`${name}`] // respective JS files
-  })
-});
-
-*/
-
-let htmlPageNames = ['Single-Cycle-RV32I'];
+let htmlPageNames = [];
 
 let multipleHtmlPlugins = htmlPageNames.map(name => {
   return new HtmlWebpackPlugin({
@@ -47,7 +37,7 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: ["style-loader", "css-loader"]
+        use: [MiniCssExtractPlugin.loader, "css-loader"]
       },
       {
         test: /\.(png|jpe?g|gif)$/i,
@@ -59,7 +49,6 @@ module.exports = {
           }
         }]
       },
-      
       {
         test: /\.html$/,
         use: ['html-loader']
@@ -71,8 +60,11 @@ module.exports = {
   plugins: [
     new CopyWebpackPlugin({
       patterns: [
-        {from: 'src/pelican/output', to: 'output'}
-      ]
+        { from: 'src', to: 'src' }, 
+      ],
+    }),
+    new MiniCssExtractPlugin({
+      filename: 'main.[contenthash].css'
     }),
     new HtmlWebpackPlugin({
       template: "public/index.html",
@@ -86,9 +78,10 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       template: "src/pelican/output/index.html",
-      filename: 'test2.html',
-      chunks: ['navbar']
+      filename: 'src/pelican/output/test2.html',
+      chunks: ['navbar'],
     }),
+    // new HtmlWebpackInlineSourcePlugin(),
   ].concat(multipleHtmlPlugins),
   stats: {
     modules: true,
