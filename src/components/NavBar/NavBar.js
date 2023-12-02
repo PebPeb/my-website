@@ -9,10 +9,11 @@ import "./NavBar.css";
 function NavBar(props) {
 
   const myLinks = [
-    {link: "/"            , title: "Home"},
+    {link: "/"            , title: "Home" , external: true},
     //{link: "/projects"    , title: "Projects"},
-    {link: "/about"       , title: "About"},
-    {link: "/contact"     , title: "Contact"}
+    {link: "/posts"       , title: "Posts", external: false},
+    {link: "/about"       , title: "About", external: true},
+    {link: "/contact"     , title: "Contact", external: true},
   ]
 
   var once = true;

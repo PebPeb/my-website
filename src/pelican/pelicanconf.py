@@ -2,6 +2,20 @@ AUTHOR = 'Bryce Keen'
 SITENAME = 'brycekeen'
 SITEURL = ""
 
+OUTPUT_PATH = "../pelican_build"
+
+ARTICLE_URL = '{category}/{slug}/'
+ARTICLE_SAVE_AS = '{category}/{slug}/index.html'
+INDEX_SAVE_AS = 'posts/index.html'
+
+# Disable generation of tags
+TAGS_SAVE_AS = ''
+TAG_SAVE_AS = ''
+
+# Disable generation of author information
+AUTHORS_SAVE_AS = ''
+AUTHOR_SAVE_AS = ''
+
 PATH = "content"
 
 TIMEZONE = 'Canada/Eastern'

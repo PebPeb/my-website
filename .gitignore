@@ -13,6 +13,7 @@ __pycache__
 /build
 /project_docs/**/build/
 /src/pelican/output
+/src/pelican_build
 
 
 # misc
