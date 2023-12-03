@@ -39,7 +39,7 @@ function NavBar(props) {
     <nav className="navbar" style={props.external ? ({minWidth: 'auto'}) : ({})}>
       <ul>
         <li>
-          <div className="tool-bar-title">Bryce Keen</div>
+          <div className="tool-bar-title" style={props.removeTitle ? { display: 'none', important: 'true' } : {}}>Bryce Keen</div>
         </li>
 
         <li id="nav-link-mobile"  ref={navRef} onClick={toggleDropdown} style={{marginLeft: 'auto'}}>

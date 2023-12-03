@@ -1,64 +1,69 @@
 {% extends "base.html" %}
 
 {% block additional_includes %}
-    <style>
-        /* Embed the contents of GeneralStyle.css */
-        /* @import url('../GeneralStyle.css'); */
-
-        /* Embed the contents of pages/GeneralStyle.css */
-        @import url('{{ SITEURL }}pages/GeneralStyle.css');
-
-        /* Embed the contents of index.css */
-        @import url('{{ SITEURL }}index.css');
-    </style>
-    <!-- <link rel="stylesheet" href="{{ SITEURL }}/../../pages/GeneralStyle.css" type="text/css" />
-    <link rel="stylesheet" href="{{ SITEURL }}/../../index.css" type="text/css" /> -->
+<style>
+    @import url('{{ SITEURL }}/pages/GeneralStyle.css');
+    @import url('{{ SITEURL }}/index.css');
+</style>
 {% endblock additional_includes%}
 
 
 {% block content_title %}{% endblock %}
 {% block content %}
-    <div id="myNavBar"></div>
-
+    <div id="myNavBar"></div> <!-- myNavBar Bundle -->
 
 {% if articles %}
-{% for article in articles %}
-    {% if loop.index == 1 %}
-    <!-- <section id="content" class="body"> -->
-    <section class="general-content">
-        <aside id="featured"><article>
-                <h1 class="entry-title"><a href="{{ SITEURL }}/{{ article.url
-                }}">{{ article.title }}</a></h1>
-                {% include 'article_infos.html' %}<!-- /.post-info -->
-                {{ article.content }}
-        </article></aside><!-- /#featured -->
-        {% if loop.length  > 1 %}
-                <h1>Other articles</h1>
-                <hr />
-                    <ol id="posts-list" class="hfeed">
-        {% endif %}
-    {% else %}
-        <li><article class="hentry">
-                <header>
-                        <h1><a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title|striptags }}">{{ article.title }}</a></h1>
-                </header>
+    {% for article in articles %}
+        {% if loop.index == 1 %}
+        <section class="general-content">
+            <aside id="featured"><article>
+                    <h1 class="entry-title">
+                        <a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a>
+                    </h1>
+                    {% include 'article_infos.html' %}<!-- /.post-info -->
+                    {{ article.content }}
+            </article></aside><!-- /#featured -->
+            {% if loop.length  > 1 %}
+                    <div style="height: 20px;"></div>
+                    <h1>Other Articles</h1>
+                    <hr />
+                <ol id="posts-list" class="hfeed">
+            {% endif %}
+        {% else %}
+            <li><article class="hentry">
+                    <header>
+                            <h1 id="other-link-title" ><a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title|striptags }}">{{ article.title }}</a></h1>
+                    </header>
 
-                <div class="entry-content">
-                {% include 'article_infos.html' %}<!-- /.post-info -->
-                {{ article.summary }}
-                <a class="readmore" href="{{ SITEURL }}/{{ article.url }}">read more</a>
-                </div><!-- /.entry-content -->
-        </article></li>
-    {% endif %}
-{% endfor %}
+                    <div class="entry-content">
+                    {% include 'article_infos.html' %}<!-- /.post-info -->
+                    {{ article.summary }}
+                    <a class="readmore" href="{{ SITEURL }}/{{ article.url }}">read more</a>
+                    </div><!-- /.entry-content -->
+            </article></li>
+        {% endif %}
+    {% endfor %}
+    
 </ol><!-- /#posts-list -->
 </section><!-- /#content -->
 {% else %}
-<section id="content" class="body">
-<h2>Pages</h2>
-{% for page in pages %}
-    <li><a href="{{ SITEURL }}/{{ page.url }}">{{ page.title }}</a></li>
-{% endfor %}
-</section>
-{% endif %}
+
+{% if articles|length == 0 %}
+    <div class="general-content">
+        <p style="margin: auto;">No Posts Yet :)</p>
+    </div>
+    {% else %}
+    
+    <section id="content" class="body">
+        
+        
+        <h2>Pages</h2>
+        {% for page in pages %}
+        <li><a href="{{ SITEURL }}/{{ page.url }}">{{ page.title }}</a></li>
+        {% endfor %}
+        
+    </section>
+    {% endif %}
+
+    {% endif %}
 {% endblock content %}

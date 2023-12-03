@@ -4,19 +4,7 @@ const fs = require('fs').promises;
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-
-// const HtmlWebpackInlineSourcePlugin = require('html-webpack-inline-source-plugin');
-// var HtmlWebpackInlineSourcePlugin = require("@effortlessmotion/html-webpack-inline-source-plugin");
-
-
-// let multipleHtmlPlugins = htmlPageNames.map(name => {
-//   return new HtmlWebpackPlugin({
-//     template: `public/projects/${name}.html`, // relative path to the HTML files
-//     filename: `projects/${name}.html`, // output HTML files
-//     chunks: ['navbar'] // respective JS files (assuming you have corresponding chunk files)
-//   });
-// });
-
+const { optimize } = require("webpack");
 
 const pelicanBuildPath = 'src/pelican_build/'; // Replace with the actual path to your folder
  
@@ -52,112 +40,6 @@ async function findHtmlFilesRecursively(folderPath) {
   }
 }
 
-// Example usage:
-// const multipleHtmlPlugins = await findHtmlFilesRecursively(pelicanBuildPath);
-  // .then(htmlFiles => {
-  //   console.log('HTML files:', htmlFiles);
-  // })
-  // .catch(error => {
-  //   console.error('Error finding HTML files:', error);
-  // });
-
-// console.log(multipleHtmlPlugins)
-
-// module.exports = {
-//   //entry: "./src/index.js",
-//   entry: {
-//     main: './src/index.js',
-//     navbar: './src/components/NavBar/render-NavBar.js',
-//   },
-//   output: {
-//     path: path.resolve(__dirname, 'build'),     // Output path
-//     filename: "bundles/[name]/[name].bundle.[contenthash].js",        // Name of bundle
-//   },
-//   module: {
-//     rules: [
-//       {
-//         test: /\.(js|jsx)$/,
-//         exclude: /node_modules/,
-//         use: 'babel-loader',
-//       },
-//       {
-//         test: /\.css$/,
-//         use: [MiniCssExtractPlugin.loader, "css-loader"]
-//       },
-//       {
-//         test: /\.(png|jpe?g|gif)$/i,
-//         use: [{
-//           loader: 'file-loader',
-//           options: {
-//             name: '[name].[ext]',
-//             outputPath: 'assets/images',
-//           }
-//         }]
-//       },
-//       {
-//         test: /\.html$/,
-//         use: ['html-loader']
-//       }
-//     ]
-//   },
-  
-
-//   plugins: [
-//     new CopyWebpackPlugin({
-//       patterns: [
-//         { from: 'src', to: 'src',
-//         globOptions: {
-//           ignore: ['**/*.js'],
-//         }, }, 
-//         { from: 'src/pelican_build', to: '', 
-//         globOptions: {
-//           ignore: ['**/*.js', '**/*.html'],
-//         },}, 
-//       ],
-//     }),
-//     new MiniCssExtractPlugin({
-//       filename: 'main.[contenthash].css'
-//     }),
-//     new HtmlWebpackPlugin({
-//       template: "public/index.html",
-//       filename: 'index.html',
-//       chunks: ['main']
-//     }),
-//     new HtmlWebpackPlugin({
-//       template: "public/test.html",
-//       filename: 'test.html',
-//       chunks: ['navbar']
-//     }),
-//     // new HtmlWebpackPlugin({
-//     //   template: "src/pelican_build/posts/index.html",
-//     //   filename: 'posts/index.html',
-//     //   chunks: ['navbar'],
-//     // }),
-//   ].concat(multipleHtmlPlugins),
-//   stats: {
-//     modules: true,
-//   },
-//   devServer: {
-//     static: {
-//       directory: path.resolve(__dirname, 'build')
-//     },
-//     open: true,                         // Auto opens a webpage on start up
-//     port: 3002,
-//     historyApiFallback: true
-//   }
-// };
-
-
-
-
-
-
-
-
-
-
-
-
 
 async function configureWebpack() {
   const multipleHtmlPlugins = await findHtmlFilesRecursively(pelicanBuildPath);
@@ -172,7 +54,7 @@ async function configureWebpack() {
     },
     output: {
       path: path.resolve(__dirname, 'build'),     // Output path
-      filename: "bundles/[name]/[name].bundle.[contenthash].js",        // Name of bundle
+      filename: "bundles/[name]/[name].bundle.js",        // Name of bundle
     },
     module: {
       rules: [
@@ -198,7 +80,7 @@ async function configureWebpack() {
         {
           test: /\.html$/,
           use: ['html-loader']
-        }
+        },
       ]
     },
     plugins: [
@@ -215,7 +97,7 @@ async function configureWebpack() {
         ],
       }),
       new MiniCssExtractPlugin({
-        filename: 'main.[contenthash].css'
+        filename: '[name].css'
       }),
       new HtmlWebpackPlugin({
         template: "public/index.html",
@@ -227,11 +109,6 @@ async function configureWebpack() {
         filename: 'test.html',
         chunks: ['navbar']
       }),
-      // new HtmlWebpackPlugin({
-      //   template: "src/pelican_build/posts/index.html",
-      //   filename: 'posts/index.html',
-      //   chunks: ['navbar'],
-      // }),
     ].concat(multipleHtmlPlugins),
     stats: {
       modules: true,
@@ -240,7 +117,7 @@ async function configureWebpack() {
       static: {
         directory: path.resolve(__dirname, 'build')
       },
-      open: true,                         // Auto opens a webpage on start up
+      open: false,                         // Auto opens a webpage on start up
       port: 3002,
       historyApiFallback: true
     }

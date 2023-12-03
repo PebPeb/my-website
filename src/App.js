@@ -1,5 +1,5 @@
 import React, {useEffect} from "react";
-import { BrowserRouter, Routes ,Route, useNavigate } from 'react-router-dom';
+import { BrowserRouter, Routes ,Route } from 'react-router-dom';
 
 import HomePage from "./pages/HomePage/HomePage";
 import AboutPage from "./pages/AboutPage/AboutPage";
@@ -8,17 +8,13 @@ import ContactPage from "./pages/ContactPage/ContactPage";
 import ProjectsPage from "./pages/ProjectsPage/ProjectsPage";
 
 const PostsPage = () => {
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    // Reload the page when the component mounts (path is "/posts")
-    window.location.reload();
-
-    // Alternatively, if you only want to reload once and not on subsequent renders, you can use:
-    // navigate('/posts', { replace: true });
-  }, []);
-
-  return (<div>reload page</div>);
+  useEffect(() => { window.location.reload(); }, []);
+  return (
+    <div>
+      <div>reloading page ...</div>
+      <div>if this does not work try reloading manually</div>
+    </div>
+  );
 };
 
 

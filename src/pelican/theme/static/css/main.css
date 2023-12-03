@@ -1,25 +1,30 @@
-/*
-	Name: Smashing HTML5
-	Date: July 2009
-	Description: Sample layout for HTML5 and CSS3 goodness.
-	Version: 1.0
-	Author: Enrique Ramírez
-	Autor URI: http://enrique-ramirez.com
-*/
 
 /* Imports */
 @import url("reset.css");
 @import url("pygment.css");
-@import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz&subset=latin);
+
+
+@font-face {
+    font-family: DejaVuSerif;
+    src: url(./../../fonts/DejaVuSerif.ttf);
+  }
+
+
+@font-face {
+    font-family: DejaVuSerif-Bold;
+    src: url(./../../assets/fonts/DejaVuSerif-Bold.ttf);
+}
+/* @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz&subset=latin); */
 
 /***** Global *****/
 /* Body */
 body {
     background: #efefef;
-    color: #000305;
-    font-size: 87.5%; /* Base font size: 14px */
-    font-family: 'Trebuchet MS', Trebuchet, 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    /* line-height: 1.429; */
+    /* color: #000305; */
+    font-size: 87.5%;
+    /* font-family: 'Trebuchet MS', Trebuchet, 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; */
+    font-size: DejaVuSerif;
+	/* line-height: 1.429; */
     margin: 0;
     padding: 0;
     /* text-align: left; */
@@ -40,8 +45,31 @@ h6 {font-size: 1em}		/* 14px */
 h1, h2, h3, h4, h5, h6 {
 	font-weight: 400;
 	line-height: 1.1;
-	margin-bottom: .8em;
-    font-family: 'Yanone Kaffeesatz', arial, serif;
+	/* margin-bottom: .8em; */
+	font-family: DejaVuSerif-Bold;
+}
+
+.general-content h1 {
+	color: rgb(16, 58, 103);
+	margin: 28.6px 0;
+	font-size: 40px;
+}
+
+.general-content p {
+	color: #3d3d3d;
+	font-size: 18px;
+	font-family: DejaVuSerif;
+}
+.general-content {
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 40px;
+    padding-top: 1px;
+    background-color: #FFFFFF;
+}
+
+.hentry a{
+	text-decoration: none;
 }
 
 h3, h4, h5, h6 { margin-top: .8em; }
@@ -52,19 +80,18 @@ hr { border: 2px solid #EEEEEE; }
 a {outline: 0;}
 a img {border: 0px; text-decoration: none;}
 a:link, a:visited {
-	/* color: #C74350;
-	padding: 0 1px;
-	text-decoration: underline; */
+	color: rgb(16, 58, 103);
+	text-decoration: none;
 }
 a:hover, a:active, a.active, .active>a {
-	background-color: #C74350;
-	color: white;
+	/* background-color: #C74350; */
+	color: rgb(19,35,52);
 	text-decoration: none;
 	text-shadow: 1px 1px 1px #333;
 }
 
 h1 a:hover {
-    background-color: inherit
+    /* background-color: inherit */
 }
 	
 /* Paragraphs */
@@ -349,8 +376,14 @@ img.left, figure.left {float: right; margin: 0 0 2em 2em;}
 li:last-child .hentry, #content > .hentry {border: 0; margin: 0;}
 #content > .hentry {padding: 1em 0;}
 .hentry img{display : none ;}
-.entry-title {font-size: 3em; margin-bottom: 10px; margin-top: 0;}
-.entry-title a:link, .entry-title a:visited {text-decoration: none; color: #333;}
+.entry-title {
+	font-size: 3em; 
+	margin-bottom: 10px; 
+	margin-top: 0;
+	color: rgb(50, 50, 50);
+
+}
+.entry-title a:link, .entry-title a:visited {text-decoration: none; color: rgb(16, 58, 103);}
 .entry-title a:visited {background-color: #fff;}
 
 .hentry .post-info * {font-style: normal;}
@@ -423,3 +456,13 @@ li:last-child .hentry, #content > .hentry {border: 0; margin: 0;}
 	
 	#add-comment input[type='submit'] {float: right; margin: 0 .5em;}
 	#add-comment * {margin-bottom: .5em;}
+
+
+#post-date {
+	font-size: 16px;
+	font-family: DejaVuSerif-Bold;
+	margin-bottom: 16px;
+	text-align: left;
+	color: #323223
+
+}
