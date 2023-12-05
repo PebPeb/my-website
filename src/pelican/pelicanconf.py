@@ -6,7 +6,15 @@ OUTPUT_PATH = "../pelican_build"
 
 ARTICLE_URL = '{category}/{slug}/'
 ARTICLE_SAVE_AS = '{category}/{slug}/index.html'
-INDEX_SAVE_AS = 'posts/index.html'
+
+CATEGORY_SAVE_AS = '{slug}s/index.html'
+CATEGORY_URL = '{slug}s/index.html'
+
+INDEX_SAVE_AS = False
+# INDEX_SAVE_AS = { 
+#     'posts/index.html',
+#     'projects/index.html'
+# }
 
 # Disable generation of tags
 TAGS_SAVE_AS = ''
@@ -43,9 +51,25 @@ SOCIAL = (
     ("Another social link", "#"),
 )
 
+# Add the search page to the list of pages to be generated
+PAGES = [('search.html', 'Search', 'Search')]
+DIRECT_TEMPLATES = ['index', 'tags', 'categories', 'archives', 'search']
+SEARCH_URL = 'search/'
+SEARCH_SAVE_AS = 'search/index.html'
+
 THEME = 'theme'
 
 DEFAULT_PAGINATION = False
 
 # Uncomment following line if you want document-relative URLs when developing
 RELATIVE_URLS = True
+
+def get_preview(content, length=75):
+    """Custom filter to get a preview of the content."""
+    words = content.split()[:length]
+    return ' '.join(words) + "..."
+
+import sys
+sys.path.append('.')
+
+JINJA_FILTERS = {'get_preview':get_preview}

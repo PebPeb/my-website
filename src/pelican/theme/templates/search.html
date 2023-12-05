@@ -1,0 +1,86 @@
+
+
+{% block additional_includes %}
+<style>
+    @import url('{{ SITEURL }}/pages/GeneralStyle.css');
+    @import url('{{ SITEURL }}/index.css');
+</style>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js"></script>
+{% endblock additional_includes%}
+
+
+{% block content %}
+    <div id="myNavBar"></div> <!-- myNavBar Bundle -->
+
+    <div class="side-bar" id="search">
+         <div id="inputdiv">
+            <h1 id="search-title"></h1>
+            <input type="text" id="searchInput" placeholder="Search">
+        </div>
+        <!-- Add the below line to the main page -->
+        <!-- <ul id="searchResults"></ul> -->
+        <div id="search-nav">
+
+        </div>
+    </div>
+
+  <script>
+    $(document).ready(function () {
+      var fuse; // Fuse.js instance
+      var articles = [
+        {% for article in articles %}
+          {
+            "title": "{{ article.title|e }}",
+            "content": "{{ article.content|striptags|e }}",
+            "url": "{{ SITEURL }}/{{ article.url }}",
+            "preview": "{{ article.content|get_preview|striptags|e }}",
+            "postDate": "{{ article.locale_date }}" 
+          },
+        {% endfor %}
+      ];
+
+      // Create a new Fuse.js instance
+      function initFuse() {
+        var options = {
+          keys: ['title', 'content', 'preview'],
+          threshold: 0.4, // Adjust the threshold based on your preferences
+        };
+        fuse = new Fuse(articles, options);
+      }
+
+    //   function getPreview(content, length = 100) {
+    //     var words = content.split(/\s+/).slice(0, length);
+    //     return words.join(' ');
+    //   }
+
+      $("#searchInput").on("input", function () {
+        var searchTerm = $(this).val().toLowerCase();
+        $("#searchResults").empty();
+
+        if (!fuse) {
+          initFuse();
+        }
+
+        // Perform a fuzzy search and get suggestions
+        var results = fuse.search(searchTerm);
+        
+        if (results.length > 0)
+          $("#searchResults").append("<h1 class=\"entry-title\">Search Results</h1>");
+
+        // Display suggestions
+        results.slice(0, 10).forEach(function (result) {
+
+          var link = '<div id="searchResults-items-sidebyside"><a href="' + result.item.url + '">' + result.item.title + '</a>';
+          var postDate = '<div id="post-date">' + result.item.postDate + '</div></div>';
+          
+          var preview = '<p>' + result.item.preview + '</p>';
+          $("#searchResults").append("<li id=\"searchResults-items\">" + link + postDate + preview + "</li></div>");
+        });
+
+        if (results.length > 0)
+          $("#searchResults").append("<hr id=\"search-divider\"></hr>");
+      });
+    });
+  </script>
+{% endblock content %}

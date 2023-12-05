@@ -1,12 +1,16 @@
 {% extends "base.html" %}
 
 {% block additional_includes %}
+  <style>
+    @import url('{{ SITEURL }}/pages/GeneralStyle.css');
+    @import url('{{ SITEURL }}/index.css');
+  </style>
 {% endblock additional_includes%}
 
 {% block title %}{{ article.title|striptags }}{% endblock %}
 {% block content %}
 <div id="myNavBar"></div>
-<section id="content" class="body">
+<section class="general-content">
 <article>
         <header> <h1 class="entry-title"><a href="{{ article.url }}"
         rel="bookmark" title="Permalink to {{ article.title|striptags }}">{{ article.title
