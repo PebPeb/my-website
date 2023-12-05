@@ -29,7 +29,7 @@
     $(document).ready(function () {
       var fuse; // Fuse.js instance
       var articles = [
-        {% for article in articles %}
+        {% for article in all_articles %}
           {
             "title": "{{ article.title|e }}",
             "content": "{{ article.content|striptags|e }}",

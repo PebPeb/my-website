@@ -30,13 +30,22 @@
                     {% include 'article_infos.html' %}<!-- /.post-info -->
                     {{ article.content }}
                 </article></aside><!-- /#featured -->
+                
                 {% if loop.length  > 1 %}
                 <div style="height: 20px;"></div>
+                {% if category and category.slug == 'project' %}
+                <h1>Other Projects</h1>
+                {% else %}
                 <h1>Other Articles</h1>
+                {% endif %}
+                
+                
                 <hr />
+                
                 <ol id="posts-list" class="hfeed">
                     {% endif %}
                     {% else %}
+                    
                     <li><article class="hentry">
                         <header>
                             <h1 id="other-link-title" ><a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title|striptags }}">{{ article.title }}</a></h1>
@@ -48,6 +57,7 @@
                             <a class="readmore" href="{{ SITEURL }}/{{ article.url }}">read more</a>
                         </div><!-- /.entry-content -->
                     </article></li>
+                    
                     {% endif %}
                     {% endfor %}
                     

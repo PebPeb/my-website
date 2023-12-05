@@ -1,6 +1,6 @@
 Title: My Second Review
 Date: 2010-12-06 10:20
-Category: Post
+Category: Project
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel risus ac eros iaculis consectetur. Integer vel tortor ac libero tincidunt fringilla. Fusce interdum, felis a luctus hendrerit, nisl odio eleifend ligula, vel varius urna tellus ut dolor. Aliquam erat volutpat. Sed euismod, purus eget tincidunt condimentum, elit enim fringilla libero, id cursus elit neque vitae est. In vehicula, massa ut consectetur tincidunt, mi dolor aliquet libero, vitae venenatis eros tellus sit amet justo. Proin ut urna nec augue convallis scelerisque. Phasellus feugiat nunc eget facilisis commodo. Maecenas sed convallis quam.
 
