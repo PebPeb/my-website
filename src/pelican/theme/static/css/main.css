@@ -1,6 +1,8 @@
 
 :root {
 	--main-h1-color: rgb(16, 58, 103);
+	--nav-bar-height: 50px;
+	--side-bar-width: 280px;
 }
 
 /* Imports */
@@ -476,42 +478,57 @@ li:last-child .hentry, #content > .hentry {border: 0; margin: 0;}
 
 
 
-
-
 /* Searching */
 
 #searchInput {
 	border-radius: 50px;
-	font-size: 13px;
+	font-size: 15px;
 	padding: 6px 12px;
 	width: 80%;
+	font-family: DejaVuSerif;
+
+	background-color: rgba(24, 44, 66);
+	color: #cccccc;
+
+	/* border: none; */
+	border-top: 1px solid rgb(20, 37, 54);
+	border-left: none;
+	border-right: none;
+	border-bottom: 1px solid rgb(151, 151, 151);
+}
+
+textarea:focus, #searchInput:focus{
+	outline: none;
 }
 
 #inputdiv {
 	/* background-color: #042c46; */
-	background-color: rgb(19,35,52);
+	/* background-color: rgb(19,35,52); */
+	padding-top: 20px;
 	padding-bottom: 20px;
-	margin: 5px;
-	border-radius: 20px;
+	/* background-color: rgb(14, 26, 39); */
+	background-image: linear-gradient(to top left, rgb(28, 63, 94), rgb(14, 26, 39));
 }
 .side-bar#search {
-	max-width: 330px;
-	width: 330px;
-	/* background-color: rgb(55, 55, 55);	 */
-	/* background-color: rgb(58, 58, 58); */
+	max-width: var(--side-bar-width);
+	width: var(--side-bar-width);
+
+	/* background-color: rgb(199, 199, 199);	 */
+	background-color: rgb(45, 48, 51);;
+
 	margin: 0;
 	overflow: auto;
 	box-sizing: border-box;
-	/* padding-bottom: 20px; */
-	/* height: 100px; */
-	max-height: calc(100vh - 50px);
-	height: calc(100vh - 50px);
+
+	border-right: 2px solid rgb(156, 156, 156);
+	max-height: calc(100vh - var(--nav-bar-height));
+	height: calc(100vh - var(--nav-bar-height));
 }
 #search-nav {
 	height: 400px;
 	/* background-color: #042c46; */
 	/* background-color: rgb(58, 58, 58); */
-	background-color: rgb(41, 48, 57);
+	/* background-color: rgb(41, 48, 57); */
 	margin: 5px;
 	border-radius: 20px;
 	height: 50%;
@@ -577,7 +594,7 @@ ul {
 
 .display.right {
 	width: 100%;
-	max-width: 330px;
+	max-width: var(--side-bar-width);
 	flex: 1 1;
 }
 
