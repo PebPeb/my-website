@@ -607,7 +607,6 @@ border-radius: 4px; /* Optional: Add rounded corners to the track */
 }
 
 .list {
-	flex: 1;
 	display: none;
 }
 
@@ -623,7 +622,7 @@ border-radius: 4px; /* Optional: Add rounded corners to the track */
 #search-nav dd {
 	display: block;
 	margin-left: 5%;
-	margin-right: 7%;
+	margin-right: 10px !important;
 	padding-left: 2%;
 	padding-top: 2px;
 	padding-bottom: 6px;
