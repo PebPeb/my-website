@@ -584,6 +584,7 @@ textarea:focus, #searchInput:focus{
 	/* background-color: rgb(58, 58, 58); */
 	/* background-color: rgb(41, 48, 57); */
 	margin: 5px;
+	margin-bottom: 50px;
 	/* height: 50%; */
 	text-align: left;
 	overflow: auto;
@@ -710,7 +711,9 @@ ul {
 	font-size: 40px;
 }
 
-
+#disclaimer {
+	color: rgb(201, 100, 100);
+}
 
 
 @media (max-width: 1350px) {

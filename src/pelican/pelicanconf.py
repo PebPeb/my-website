@@ -1,5 +1,5 @@
 AUTHOR = 'Bryce Keen'
-SITENAME = 'brycekeen'
+SITENAME = 'Bryce Keen'
 SITEURL = ""
 
 OUTPUT_PATH = "../pelican_build"

@@ -90,10 +90,10 @@
         var results = fuse.search(searchTerm);
         
         if (results.length > 0)
-          $("#searchResults").append("<h1 class=\"entry-title\">Search Results</h1>");
+          $("#searchResults").append("<h1 class=\"entry-title\">Search Results</h1><p id=\"disclaimer\">Disclaimer: Due to the limitations of fuzzy search I apologize for the sub par results</p>");
 
-        // Display suggestions
-        results.slice(0, 10).forEach(function (result) {
+          // Display suggestions
+          results.slice(0, 10).forEach(function (result) {
 
           var link = '<div id="searchResults-items-sidebyside"><a href="' + result.item.url + '">' + result.item.title + '</a>';
           var postDate = '<div id="post-date">' + result.item.postDate + '</div></div>';
