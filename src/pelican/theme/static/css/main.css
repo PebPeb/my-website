@@ -514,24 +514,129 @@ textarea:focus, #searchInput:focus{
 	width: var(--side-bar-width);
 
 	/* background-color: rgb(199, 199, 199);	 */
-	background-color: rgb(45, 48, 51);;
+	background-color: rgb(45, 48, 51);
 
 	margin: 0;
-	overflow: auto;
+	/* overflow: auto; */
 	box-sizing: border-box;
 
 	border-right: 2px solid rgb(156, 156, 156);
+	/* min-height: 100vh;
+	max-height: 100vh; */
+	display: flex;
+	flex-direction: column;
 	max-height: calc(100vh - var(--nav-bar-height));
 	height: calc(100vh - var(--nav-bar-height));
+	/* overflow: hidden; */
 }
+
+
+
+
+.side-bar h1{
+	color: #cccccc;
+	/* text-align: left; */
+	/* margin-left: 10%; */
+	font-size: 18px;
+}
+#archive-split {
+	margin-top: 8px;
+	margin-bottom: 16px;
+	width: 90%;
+	min-height: 2px;
+	border-width: 0px;
+	background-color: rgb(92, 97, 101);
+}
+
+
+
+.normal-button {
+	color: #cccccc;
+	font-family: DejaVuSerif-Bold;
+	font-size: 16px;
+	cursor: pointer;
+	padding-top: 6px;
+	padding-bottom: 6px;
+	padding-left: 4px;
+	margin-bottom: 10px;
+	margin-left: 4%;
+	margin-right: 10%;
+}
+
+/* Hover effect */
+.normal-button:hover {
+	background-color: rgba(0, 0, 0, 0.171);
+}
+
+#test {
+	width: 0;
+	height: 0;
+	border-left: 15px solid transparent; /* Adjust size as needed */
+	border-right: 15px solid transparent;
+	border-top: 26px solid #cccccc; /* Adjust color as needed */
+}
+
+
+
 #search-nav {
-	height: 400px;
+	/* height: 400px; */
 	/* background-color: #042c46; */
 	/* background-color: rgb(58, 58, 58); */
 	/* background-color: rgb(41, 48, 57); */
 	margin: 5px;
-	border-radius: 20px;
-	height: 50%;
+	/* height: 50%; */
+	text-align: left;
+	overflow: auto;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+#search-nav::-webkit-scrollbar {
+	width: 4px; /* Set the width of the scrollbar */
+}
+
+#search-nav::-webkit-scrollbar-thumb {
+background-color: rgb(65, 69, 73); /* Set the color of the thumb (the moving part of the scrollbar) */
+border-radius: 4px; /* Optional: Add rounded corners to the thumb */
+}
+
+#search-nav::-webkit-scrollbar-track {
+background-color: rgb(45, 48, 51); /* Set the color of the track (the non-moving part of the scrollbar) */
+border-radius: 4px; /* Optional: Add rounded corners to the track */
+}
+
+.list {
+	flex: 1;
+	display: none;
+}
+
+#search-nav hr{
+	margin-top: 8px;
+	margin-bottom: 8px;
+	width: 80%;
+	min-height: 1px;
+	border-width: 0px;
+	background-color: rgb(65, 69, 73);
+}
+
+#search-nav dd {
+	display: block;
+	margin-left: 5%;
+	margin-right: 7%;
+	padding-left: 2%;
+	padding-top: 2px;
+	padding-bottom: 6px;
+	margin-right: 4px;
+	margin-bottom: 0;
+}
+#search-nav dd:hover{
+	background-color: rgba(0, 0, 0, 0.171);
+}
+
+
+#search-nav a {
+	color: #cccccc;
 }
 
 #searchResults {
@@ -605,6 +710,9 @@ ul {
 	color: white;
 	font-size: 40px;
 }
+
+
+
 
 @media (max-width: 1350px) {
 	.display.center {
