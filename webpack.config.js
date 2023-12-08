@@ -1,13 +1,23 @@
 
 const path = require("path");
 const fs = require('fs').promises;
+const fs_2 = require('fs');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const { optimize } = require("webpack");
 
-const pelicanBuildPath = 'src/pelican_build/'; // Replace with the actual path to your folder
- 
+
+const propertiesFilePath = 'config.properties';
+const propertiesFileContent = fs_2.readFileSync(propertiesFilePath, 'utf-8');
+const versionMatch = propertiesFileContent.match(/NAVBAR_VERSION\s*=\s*(.*)/);
+const NAVBAR_VERSION = versionMatch ? ".v" + versionMatch[1].trim() : ""; 
+
+
+const pelicanBuildPath = 'src/pelican_build/';
+
+// Recursively searches though a given directory for .html files
+// once found package 'navbar' bundle into it
 async function findHtmlFilesRecursively(folderPath) {
   try {
     const files = await fs.readdir(folderPath);
@@ -23,16 +33,16 @@ async function findHtmlFilesRecursively(folderPath) {
         const subdirectoryHtmlFiles = await findHtmlFilesRecursively(filePath);
         htmlFiles.push(...subdirectoryHtmlFiles);
       } else if (path.extname(file) === '.html') {
-        // If it's an HTML file, add its path to the array
+        // If it's an HTML file, add the packaged file to the array
         htmlFiles.push(
               new HtmlWebpackPlugin({
                 template: filePath,
                 filename: path.relative(pelicanBuildPath, filePath),
-                chunks: ['navbar'],
+                chunks: ['navbar'],         // Add navbar bundle
               }));
       }
     }
-
+  
     return htmlFiles;
   } catch (error) {
     console.error('Error reading folder:', error);
@@ -43,8 +53,7 @@ async function findHtmlFilesRecursively(folderPath) {
 
 async function configureWebpack() {
   const multipleHtmlPlugins = await findHtmlFilesRecursively(pelicanBuildPath);
-
-  console.log(multipleHtmlPlugins);
+  // console.log(multipleHtmlPlugins);
 
   return {
     //entry: "./src/index.js",
@@ -54,7 +63,7 @@ async function configureWebpack() {
     },
     output: {
       path: path.resolve(__dirname, 'build'),     // Output path
-      filename: "bundles/[name]/[name].bundle.js",        // Name of bundle
+      filename: "bundles/[name]/[name].bundle" + NAVBAR_VERSION + ".js",        // Name of bundle
     },
     module: {
       rules: [
