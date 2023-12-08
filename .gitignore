@@ -9,9 +9,12 @@
 /coverage
 
 # production
+__pycache__
 /build
 /project_docs/**/build/
-
+/src/pelican/output
+/src/pelican_build
+/**/test_data
 
 # misc
 .DS_Store

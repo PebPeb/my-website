@@ -10,9 +10,10 @@ function NavBar(props) {
 
   const myLinks = [
     {link: "/"            , title: "Home"},
-    //{link: "/projects"    , title: "Projects"},
+    {link: "/posts"       , title: "Posts"},
+    {link: "/projects"    , title: "Projects"},
     {link: "/about"       , title: "About"},
-    {link: "/contact"     , title: "Contact"}
+    {link: "/contact"     , title: "Contact"},
   ]
 
   var once = true;
@@ -38,7 +39,7 @@ function NavBar(props) {
     <nav className="navbar" style={props.external ? ({minWidth: 'auto'}) : ({})}>
       <ul>
         <li>
-          <div className="tool-bar-title">Bryce Keen</div>
+          <div className="tool-bar-title" style={props.removeTitle ? { display: 'none', important: 'true' } : {}}>Bryce Keen</div>
         </li>
 
         <li id="nav-link-mobile"  ref={navRef} onClick={toggleDropdown} style={{marginLeft: 'auto'}}>

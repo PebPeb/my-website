@@ -30,7 +30,7 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 /* Disable Title from navbar */
-.tool-bar-title {
+/* .tool-bar-title {
   display: none !important;
-}
+} */
 

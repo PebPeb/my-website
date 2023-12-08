@@ -44,7 +44,7 @@ function HomePage() {
 
   return (
     <div className="background-container">
-      <NavBar/>
+      <NavBar removeTitle={true}/>
       <TitleCard title="B<span class='letter-spacing'>r</span>yce Keen" image={BlueCircuit}></TitleCard>
       <div className="general-content">
         <div className="spacing-div"></div>
