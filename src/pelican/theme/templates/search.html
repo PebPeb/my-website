@@ -36,7 +36,7 @@
             {% for article in all_articles %}
             {%if article.category == category %}
             <dd>
-              <a href='{{ article.url }}'>{{ article.title }}</a>
+              <a href='/{{ article.url }}'>{{ article.title }}</a>
             </dd>
             <!-- <div id="split"></div> -->
             <hr>
