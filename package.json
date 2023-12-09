@@ -1,7 +1,7 @@
 {
-  "name": "default",
+  "name": "brycekeen",
   "homepage": ".",
-  "version": "X.X.X",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.4.0",
