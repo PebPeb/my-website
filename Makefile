@@ -9,6 +9,11 @@ endef
 
 all: clean build
 
+install:
+	@cd ./scripts && python3 version.py
+	npm install
+	@cd ./scripts && python3 unversion.py
+
 build: pelican
 	npm run build
 start: pelican

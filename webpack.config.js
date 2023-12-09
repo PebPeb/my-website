@@ -5,13 +5,12 @@ const fs_2 = require('fs');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const { optimize } = require("webpack");
 
+// Version Control
 
 const propertiesFilePath = 'config.properties';
 const propertiesFileContent = fs_2.readFileSync(propertiesFilePath, 'utf-8');
-const versionMatch = propertiesFileContent.match(/NAVBAR_VERSION\s*=\s*(.*)/);
-const NAVBAR_VERSION = versionMatch ? ".v" + versionMatch[1].trim() : ""; 
+const NAVBAR_VERSION = ".v" + propertiesFileContent.match(/NAVBAR_VERSION\s*=\s*(.*)/)[1].trim(); 
 
 
 const pelicanBuildPath = 'src/pelican_build/';
