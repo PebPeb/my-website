@@ -29,3 +29,6 @@ yarn-error.log*
 
 package-lock.json
 .vscode
+
+/src/pelican/content/*
+!/src/pelican/content/generate_test_data.py
