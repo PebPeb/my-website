@@ -11,10 +11,6 @@ CATEGORY_SAVE_AS = '{slug}s/index.html'
 CATEGORY_URL = '{slug}s/index.html'
 
 INDEX_SAVE_AS = False
-# INDEX_SAVE_AS = { 
-#     'posts/index.html',
-#     'projects/index.html'
-# }
 
 # Disable generation of tags
 TAGS_SAVE_AS = ''
