@@ -26,10 +26,11 @@ start: pelican
 	npm run start
 
 
+# cd $(REPO_DIR) && git checkout -B $(REPO_BRANCH) && git pull; 
 define manage_content
 	@if [ -d "$(REPO_DIR)" ]; then \
 		echo "Repository exists, pulling changes..."; \
-		cd $(REPO_DIR) && git checkout -B $(REPO_BRANCH) && git pull; \
+		cd $(REPO_DIR) && git fetch && git reset --hard origin/$(REPO_BRANCH); \
 	else \
 		echo "Repository does not exist, cloning..."; \
 		git clone -b $(REPO_BRANCH) $(CONTENT_REPO_URL) $(REPO_DIR); \

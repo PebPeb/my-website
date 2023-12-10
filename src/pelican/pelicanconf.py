@@ -33,19 +33,15 @@ TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
-# Blogroll
-LINKS = (
-    ("Pelican", "https://getpelican.com/"),
-    ("Python.org", "https://www.python.org/"),
-    ("Jinja2", "https://palletsprojects.com/p/jinja/"),
-    ("You can modify those links in your config file", "#"),
-)
-
-# Social widget
-SOCIAL = (
-    ("You can add links in your config file", "#"),
-    ("Another social link", "#"),
-)
+# STATIC_PATHS = ['content/assets']
+# MARKDOWN = {
+#   'extension_configs': {
+#     'markdown.extensions.codehilite': {'css_class': 'highlight', 'linenums': True},
+#     'markdown.extensions.extra': {},
+#     'markdown.extensions.meta': {},
+#   },
+#   'output_format': 'html5',
+# }
 
 # Add the search page to the list of pages to be generated
 PAGES = [('search.html', 'Search', 'Search')]

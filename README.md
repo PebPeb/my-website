@@ -6,6 +6,12 @@ The primary form of interaction with this repository is the Makefile. To get sta
 make install
 ```
 
+## For Changing the Code Syntax Highlighting
+
+``` bash
+pygmentize -S default -f html -a .highlight > pygment.css
+```
+
 ## Dependencies
 
 - Node.js
