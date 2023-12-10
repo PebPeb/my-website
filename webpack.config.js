@@ -34,11 +34,11 @@ async function findHtmlFilesRecursively(folderPath) {
       } else if (path.extname(file) === '.html') {
         // If it's an HTML file, add the packaged file to the array
         htmlFiles.push(
-              new HtmlWebpackPlugin({
-                template: filePath,
-                filename: path.relative(pelicanBuildPath, filePath),
-                chunks: ['navbar'],         // Add navbar bundle
-              }));
+          new HtmlWebpackPlugin({
+            template: filePath,
+            filename: path.relative(pelicanBuildPath, filePath),
+            chunks: ['navbar'],         // Add navbar bundle
+          }));
       }
     }
   
@@ -87,7 +87,10 @@ async function configureWebpack() {
         },
         {
           test: /\.html$/,
-          use: ['html-loader']
+          loader: 'html-loader',
+          options: {
+            sources: false,
+          },
         },
       ]
     },
