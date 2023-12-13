@@ -61,10 +61,12 @@ h1, h2, h3, h4, h5, h6 {
 	font-size: 40px;
 }
 
-.general-content p {
+.general-content p,
+.general-content li {
 	color: #3d3d3d;
 	font-size: 18px;
 	font-family: DejaVuSerif;
+	line-height: 1.5;
 }
 .general-content {
     padding-left: 40px;
@@ -89,7 +91,8 @@ hr { border: 2px solid #EEEEEE; }
 a {outline: 0;}
 a img {border: 0px; text-decoration: none;}
 a:link, a:visited {
-	color: var(--main-h1-color);
+	/* color: var(--main-h1-color); */
+	color: rgb(0, 195, 255);
 	text-decoration: none;
 }
 a:hover, a:active, a.active, .active>a {
@@ -115,7 +118,7 @@ em, i {font-style: italic;}
 /* Lists */
 ul {
 	list-style: outside disc;
-	margin: 1em 0 1.5em 1.5em;
+	margin: 1em 0 1.5em;
 }
 
 ol {
@@ -703,9 +706,9 @@ border-radius: 4px; /* Optional: Add rounded corners to the track */
 	margin-bottom: 80px;
 }
 
-ul {
+/* ul {
 	list-style: none;
-}
+} */
 
 .display-container {
 	display: flex;
