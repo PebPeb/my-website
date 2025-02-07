@@ -1,9 +1,18 @@
+version: '3.8'
+
+networks:
+  brycekeen-web-network:
+    name: brycekeen-web-network
+    driver: bridge
+
 
 services:
   db:
     image: mysql:8
     container_name: mysql_container
     restart: always
+    networks:
+      - brycekeen-web-network
     env_file:
       - ./database/.env
     volumes:
@@ -12,5 +21,17 @@ services:
     ports:
       - "3309:3306"       # Host:Container
 
+  nginx:
+    image: nginx
+    container_name: nginx_container
+    networks:
+      - brycekeen-web-network
+    ports:
+      - "8080:80"
+    volumes:
+      - ./frontend/src:/usr/share/nginx/html:ro
+      - ./frontend/conf.d:/etc/nginx/conf.d:ro
+
 volumes:
   db_data:
+
