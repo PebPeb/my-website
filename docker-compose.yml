@@ -5,8 +5,8 @@ networks:
     name: brycekeen-web-network
     driver: bridge
 
-
 services:
+  # Database - Running mysql
   db:
     image: mysql:8
     container_name: mysql_container
@@ -21,6 +21,22 @@ services:
     ports:
       - "3309:3306"       # Host:Container
 
+  # Backend - Running C# API
+  backend:
+    build: ./backend                      # Location of dockerfile
+    container_name: backend_container
+    restart: always
+    networks:
+      - brycekeen-web-network
+    environment:
+      - ASPNETCORE_URLS=http://+:5000
+      - ConnectionStrings__DefaultConnection=Server=db;Database=mydb;User=root;Password=secret;
+    depends_on:
+      - db
+    ports:
+      - "5000:5000"       # Host:Container
+
+  # Frontend - Running nginx
   nginx:
     image: nginx
     container_name: nginx_container
