@@ -10,4 +10,13 @@ MYSQL_PASSWORD=<sql_password>
 ```
 
 
+## Starting Containers
+
+``` bash
+docker-compose up -d
+docker-compose up -d --build
+docker-compose down
+```
+
+
 
