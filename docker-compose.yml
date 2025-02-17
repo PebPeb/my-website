@@ -20,7 +20,7 @@ services:
       - db_data:/var/lib/mysql
       - ./database/init.sql:/docker-entrypoint-initdb.d/init.sql
 
-  # Backend - Running C# API
+  # Backend - Running Java Spring API
   backend:
     build: ./backend                       # Location of dockerfile
     container_name: backend_container
@@ -34,12 +34,13 @@ services:
   nginx:
     image: nginx
     container_name: nginx_container
+    restart: always
     networks:
       - brycekeen-web-network
     ports:
       - "8080:80"
     volumes:
-      - ./frontend/src:/usr/share/nginx/html:ro
+      - ./frontend/build:/usr/share/nginx/html:ro
       - ./frontend/conf.d:/etc/nginx/conf.d:ro
 
 volumes:
