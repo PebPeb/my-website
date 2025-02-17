@@ -1,20 +1,22 @@
-# Use the official .NET SDK image for building
-FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
+# Use a base image with Java installed
+FROM openjdk:23-jdk-slim
+
+RUN apt-get update && \
+  apt-get install -y maven && \
+  rm -rf /var/lib/apt/lists/*
+
 WORKDIR /app
 
-# Copy project files and restore dependencies
-COPY *.csproj ./
-RUN dotnet restore
+# Copy the Maven build file (pom.xml) and source code into the container
+COPY ./website/src src 
+COPY ./website/pom.xml pom.xml
 
-# Copy the rest of the project and build it
-COPY . ./
-RUN dotnet publish -c Release -o out
+# Install Maven dependencies and build the project
+# RUN mvn clean install -DskipTests
+RUN mvn clean install
 
-# Use a lightweight runtime image for running the app
-FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS runtime
-WORKDIR /app
-COPY --from=build /app/out .
+# Expose the port the app runs on
+EXPOSE 8080
 
-# Expose the port used by the API
-EXPOSE 5000
-ENTRYPOINT ["dotnet", "backend.dll"]
+# Define the command to run the application
+CMD ["java", "-jar", "target/website-0.0.1-SNAPSHOT.jar"]

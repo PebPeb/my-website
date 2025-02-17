@@ -1,1 +1,1 @@
-DROP DATABASE brycekeen_develop_db;
+DROP DATABASE brycekeen_db;
