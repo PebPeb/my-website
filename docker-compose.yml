@@ -1,34 +1,32 @@
 version: '3.8'
 
+
+# Profiles
+#   default: Starts up builds
+#   build: Used for what is needed for all build stages of a service
+#   release: Used for what is needed in order to generate a release
+
+
+
 networks:
   brycekeen-web-network:
     name: brycekeen-web-network
     driver: bridge
 
 services:
-  # Database - Running mysql
-  # Default Container port number: 3306
-  db:
-    image: mysql:8
-    container_name: mysql_container
-    restart: always
-    networks:
-      - brycekeen-web-network
-    env_file:
-      - ./database/.env
-    volumes:
-      - db_data:/var/lib/mysql
-      - ./database/init.sql:/docker-entrypoint-initdb.d/init.sql
 
-  # Backend - Running Java Spring API
-  backend:
-    build: ./backend                       # Location of dockerfile
-    container_name: backend_container
-    restart: always
-    networks:
-      - brycekeen-web-network
-    depends_on:
-      - db
+  # Build stage for frontend components
+  build-react-components:
+    build:
+      context: ./frontend/src
+      dockerfile: build-react-components.dockerfile 
+    container_name: frontend-build-react-components
+    ports:
+      - "3002:3002"
+    profiles:
+      - release
+      - build
+      - build-frontend
 
   # Frontend - Running nginx
   nginx:
@@ -42,6 +40,41 @@ services:
     volumes:
       - ./frontend/build:/usr/share/nginx/html:ro
       - ./frontend/conf.d:/etc/nginx/conf.d:ro
+    profiles:
+      - default
+      - release
+
+###################################################################################
+# Developing Services
+###################################################################################
+
+  # Database - Running mysql
+  # Default Container port number: 3306
+  db:
+    image: mysql:8
+    container_name: mysql_container
+    restart: always
+    networks:
+      - brycekeen-web-network
+    env_file:
+      - ./database/.env
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./database/init.sql:/docker-entrypoint-initdb.d/init.sql
+    profiles:
+      - future
+
+  # Backend - Running Java Spring API
+  backend:
+    build: ./backend                       # Location of dockerfile
+    container_name: backend_container
+    restart: always
+    networks:
+      - brycekeen-web-network
+    depends_on:
+      - db
+    profiles:
+      - future
 
 volumes:
   db_data:

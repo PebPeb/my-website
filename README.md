@@ -20,5 +20,11 @@ docker-compose up -d --build
 docker-compose down
 ```
 
+Docker compose includes build profiles that allow for allowing the running of a specific run state. 
+
+``` bash
+docker-compose --profile build-frontend up
+```
+
 
 
