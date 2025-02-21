@@ -13,7 +13,7 @@ const propertiesFileContent = fs_2.readFileSync(propertiesFilePath, 'utf-8');
 const NAVBAR_VERSION = ".v" + propertiesFileContent.match(/NAVBAR_VERSION\s*=\s*(.*)/)[1].trim(); 
 
 
-const pelicanBuildPath = 'src/pelican_build/';
+const pelicanBuildPath = 'pelican_build/';
 
 // Recursively searches though a given directory for .html files
 // once found package 'navbar' bundle into it
@@ -57,8 +57,8 @@ async function configureWebpack() {
   return {
     //entry: "./src/index.js",
     entry: {
-      main: './src/index.js',
-      navbar: './src/components/NavBar/render-NavBar.js',
+      main: './react-components/index.js',
+      navbar: './react-components/components/NavBar/render-NavBar.js',
     },
     output: {
       path: path.resolve(__dirname, 'build'),     // Output path
@@ -97,11 +97,11 @@ async function configureWebpack() {
     plugins: [
       new CopyWebpackPlugin({
         patterns: [
-          { from: 'src', to: '',
+          { from: 'react-components', to: '',
           globOptions: {
             ignore: ['**/*.js'],
           }, }, 
-          { from: 'src/pelican_build', to: '', 
+          { from: 'pelican_build', to: '', 
           globOptions: {
             ignore: ['**/*.js', '**/*.html'],
           },}, 
