@@ -57,13 +57,24 @@ async function configureWebpack() {
   return {
     //entry: "./src/index.js",
     entry: {
-      main: './react-components/index.js',
-      navbar: './react-components/components/NavBar/render-NavBar.js',
+      vendor: ["react", "react-dom"],
+      main: {
+        import: './react-components/index.js',
+        dependOn: 'vendor',
+      },
+      navbar: {
+        import: './react-components/components/NavBar/render-NavBar.js',
+        dependOn: 'vendor',
+      }
     },
     output: {
       path: path.resolve(__dirname, 'build'),     // Output path
       filename: "bundles/[name]/[name].bundle" + NAVBAR_VERSION + ".js",        // Name of bundle
     },
+    // externals: {
+    //   react: "vendor.react",
+    //   "react-dom": "vendor.reactDom",
+    // },
     module: {
       rules: [
         {
@@ -113,12 +124,12 @@ async function configureWebpack() {
       new HtmlWebpackPlugin({
         template: "public/index.html",
         filename: 'index.html',
-        chunks: ['main']
+        chunks: ["vendor", "navbar", "main"],
       }),
       new HtmlWebpackPlugin({
-        template: "public/test.html",
+        template: "public/test_html/test.html",
         filename: 'test.html',
-        chunks: ['navbar']
+        chunks: ["vendor", "navbar"],
       }),
     ].concat(multipleHtmlPlugins),
     stats: {
@@ -131,8 +142,13 @@ async function configureWebpack() {
       open: false,                         // Auto opens a webpage on start up
       port: 3002,
       historyApiFallback: true
-    }
+    },
+    // optimization: {
+    //   splitChunks: {
+    //     chunks: "all", // Automatically extract common dependencies
+    //   },
+    // },
   }
 }
 
-module.exports = configureWebpack;
+module.exports = [configureWebpack];
