@@ -19,6 +19,6 @@ services:
       - "3005:80"
     volumes:
       - ./build:/usr/share/nginx/html:ro
-      - ./conf.d:/etc/nginx/conf.d:ro
+      - ./misc/conf.d:/etc/nginx/conf.d:ro
     profiles:
       - build-test
