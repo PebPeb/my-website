@@ -6,8 +6,6 @@ networks:
     driver: bridge
 
 services:
-
-
   # Deploying build locally for testing
   nginx:
     image: nginx
@@ -18,7 +16,7 @@ services:
     ports:
       - "3005:80"
     volumes:
-      - ./build:/usr/share/nginx/html:ro
+      - ./src/build:/usr/share/nginx/html:ro
       - ./misc/conf.d:/etc/nginx/conf.d:ro
     profiles:
       - build-test
