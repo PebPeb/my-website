@@ -1,0 +1,24 @@
+version: '3.8'
+
+networks:
+  brycekeen-web-network:
+    name: brycekeen-web-network
+    driver: bridge
+
+services:
+
+
+  # Deploying build locally for testing
+  nginx:
+    image: nginx
+    container_name: nginx_container
+    restart: always
+    networks:
+      - brycekeen-web-network
+    ports:
+      - "3005:80"
+    volumes:
+      - ./build:/usr/share/nginx/html:ro
+      - ./conf.d:/etc/nginx/conf.d:ro
+    profiles:
+      - build-test
