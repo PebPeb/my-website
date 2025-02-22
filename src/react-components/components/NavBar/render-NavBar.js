@@ -5,5 +5,15 @@ import NavBar from './NavBar';
 
 
 
-const element = createRoot(document.getElementById('myNavBar'));
-element.render(<NavBar external= { true } />);
+const navBarElement = document.getElementById("myNavBar");
+
+// Function to get attributes and convert them properly
+const getPropsFromElement = (element) => ({
+  removeTitle: element.getAttribute("bk-removeTitle") === "true" ?? false,
+  external: element.getAttribute("bk-external") === "true" ?? false,
+});
+
+const props = getPropsFromElement(navBarElement); // Extract props
+
+const root = createRoot(navBarElement);
+root.render(<NavBar {...props} />);

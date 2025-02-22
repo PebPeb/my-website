@@ -7,7 +7,6 @@ import "./NavBar.css";
 
 
 function NavBar(props) {
-
   const myLinks = [
     {link: "/"            , title: "Home"},
     {link: "/posts"       , title: "Posts"},
@@ -62,9 +61,10 @@ function NavBar(props) {
                     </a>
                 ) : 
                 (
-                    <Link to={element.link} style={{textDecoration: 'none'}}>
-                      <div className="link-container">{element.title}</div>
-                    </Link>
+                    <a></a>
+                    // <Link to={element.link} style={{textDecoration: 'none'}}>
+                    //   <div className="link-container">{element.title}</div>
+                    // </Link>
                 )}
               </li>
             )}
@@ -83,9 +83,10 @@ function NavBar(props) {
                   </a>
               ) : 
               (
-                  <Link to={element.link} style={{textDecoration: 'none'}}>
-                    <div className="link-container">{element.title}</div>
-                  </Link>
+                  <a></a>
+                  // <Link to={element.link} style={{textDecoration: 'none'}}>
+                  //   <div className="link-container">{element.title}</div>
+                  // </Link>
               )}
             </li>
           )}
