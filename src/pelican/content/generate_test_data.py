@@ -37,8 +37,8 @@ def generate_md_files():
     os.makedirs(output_folder, exist_ok=True)
 
     generate = [
-        {"Category": "Post", "Directory":"/posts"}, 
-        {"Category": "Project", "Directory":"/projects"}
+        {"Category": "Posts", "Directory":"/posts"}, 
+        {"Category": "Projects", "Directory":"/projects"}
         ]
 
     for x in generate:

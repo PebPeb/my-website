@@ -8,7 +8,7 @@
 
 {% block title %}{{ page.title }}{% endblock %}
 {% block content %}        
-<div id="myNavBar"></div>
+<div id="myNavBar" bk-external="true"></div>
 <section id="content" class="body">    
     <h1 class="entry-title">{{ page.title }}</h1>
     {% if PDF_PROCESSOR %}<a href="{{ SITEURL }}/pdf/{{ page.slug }}.pdf">get

@@ -7,8 +7,8 @@ OUTPUT_PATH = "../pelican_build"
 ARTICLE_URL = '{category}/{slug}/'
 ARTICLE_SAVE_AS = '{category}/{slug}/index.html'
 
-CATEGORY_SAVE_AS = '{slug}s/index.html'
-CATEGORY_URL = '{slug}s/index.html'
+CATEGORY_SAVE_AS = '{slug}/index.html'
+CATEGORY_URL = '{slug}/index.html'
 
 INDEX_SAVE_AS = False
 
