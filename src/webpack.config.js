@@ -37,7 +37,7 @@ async function findHtmlFilesRecursively(folderPath) {
           new HtmlWebpackPlugin({
             template: filePath,
             filename: path.relative(pelicanBuildPath, filePath),
-            chunks: ['navbar'],         // Add navbar bundle
+            chunks: ['vendor', 'navbar'],         // Add navbar bundle
           }));
       }
     }
@@ -71,10 +71,6 @@ async function configureWebpack() {
       path: path.resolve(__dirname, 'build'),     // Output path
       filename: "bundles/[name]/[name].bundle" + NAVBAR_VERSION + ".js",        // Name of bundle
     },
-    // externals: {
-    //   react: "vendor.react",
-    //   "react-dom": "vendor.reactDom",
-    // },
     module: {
       rules: [
         {
