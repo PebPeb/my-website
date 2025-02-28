@@ -1,8 +1,10 @@
+import os
+
 AUTHOR = 'Bryce Keen'
 SITENAME = 'Bryce Keen'
 SITEURL = ""
 
-OUTPUT_PATH = "../pelican_build"
+OUTPUT_PATH = "../build"
 
 ARTICLE_URL = '{category}/{slug}/'
 ARTICLE_SAVE_AS = '{category}/{slug}/index.html'
@@ -20,7 +22,8 @@ TAG_SAVE_AS = ''
 AUTHORS_SAVE_AS = ''
 AUTHOR_SAVE_AS = ''
 
-PATH = "content"
+# PATH = "content"
+PATH = os.path.join(os.path.abspath(os.path.dirname(__file__)), 'content')
 
 TIMEZONE = 'Canada/Eastern'
 

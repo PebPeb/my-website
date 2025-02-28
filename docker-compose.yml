@@ -20,3 +20,15 @@ services:
       - ./misc/conf.d:/etc/nginx/conf.d:ro
     profiles:
       - build-test
+
+  build-pelican:
+    build:
+      context: ./src/
+      dockerfile: python3.dockerfile
+    volumes:
+      - ./src/build/:/app/build/
+      - ./src/pelican/:/app/pelican/
+    profiles:
+      - build
+    working_dir: /app
+    command: ["/bin/bash", "-c", "python3 -m pelican -s /app/pelican/pelicanconf.py"]
