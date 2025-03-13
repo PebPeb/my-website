@@ -12,7 +12,6 @@ function AboutPage() {
 
   return (
     <div style={{ backgroundColor: '#efefef', minHeight: '100vh' }}>
-      <NavBar />
       <div className="about-content">
         <h1>About Me</h1>
         <img id="my-image" src={keen}></img>

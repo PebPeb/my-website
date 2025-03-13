@@ -13,45 +13,45 @@ const propertiesFileContent = fs_2.readFileSync(propertiesFilePath, 'utf-8');
 const NAVBAR_VERSION = ".v" + propertiesFileContent.match(/NAVBAR_VERSION\s*=\s*(.*)/)[1].trim(); 
 
 
-const pelicanBuildPath = 'pelican_build/';
+// const pelicanBuildPath = 'pelican_build/';
 
-// Recursively searches though a given directory for .html files
-// once found package 'navbar' bundle into it
-async function findHtmlFilesRecursively(folderPath) {
-  try {
-    const files = await fs.readdir(folderPath);
+// // Recursively searches though a given directory for .html files
+// // once found package 'navbar' bundle into it
+// async function findHtmlFilesRecursively(folderPath) {
+//   try {
+//     const files = await fs.readdir(folderPath);
 
-    const htmlFiles = [];
+//     const htmlFiles = [];
 
-    for (const file of files) {
-      const filePath = path.join(folderPath, file);
-      const stats = await fs.stat(filePath);
+//     for (const file of files) {
+//       const filePath = path.join(folderPath, file);
+//       const stats = await fs.stat(filePath);
 
-      if (stats.isDirectory()) {
-        // If it's a directory, recursively find HTML files
-        const subdirectoryHtmlFiles = await findHtmlFilesRecursively(filePath);
-        htmlFiles.push(...subdirectoryHtmlFiles);
-      } else if (path.extname(file) === '.html') {
-        // If it's an HTML file, add the packaged file to the array
-        htmlFiles.push(
-          new HtmlWebpackPlugin({
-            template: filePath,
-            filename: path.relative(pelicanBuildPath, filePath),
-            chunks: ['vendor', 'navbar'],         // Add navbar bundle
-          }));
-      }
-    }
+//       if (stats.isDirectory()) {
+//         // If it's a directory, recursively find HTML files
+//         const subdirectoryHtmlFiles = await findHtmlFilesRecursively(filePath);
+//         htmlFiles.push(...subdirectoryHtmlFiles);
+//       } else if (path.extname(file) === '.html') {
+//         // If it's an HTML file, add the packaged file to the array
+//         htmlFiles.push(
+//           new HtmlWebpackPlugin({
+//             template: filePath,
+//             filename: path.relative(pelicanBuildPath, filePath),
+//             chunks: ['vendor', 'navbar'],         // Add navbar bundle
+//           }));
+//       }
+//     }
   
-    return htmlFiles;
-  } catch (error) {
-    console.error('Error reading folder:', error);
-    return [];
-  }
-}
+//     return htmlFiles;
+//   } catch (error) {
+//     console.error('Error reading folder:', error);
+//     return [];
+//   }
+// }
 
 
 async function configureWebpack() {
-  const multipleHtmlPlugins = await findHtmlFilesRecursively(pelicanBuildPath);
+  // const multipleHtmlPlugins = await findHtmlFilesRecursively(pelicanBuildPath);
   // console.log(multipleHtmlPlugins);
 
   return {
@@ -107,11 +107,11 @@ async function configureWebpack() {
           { from: 'react-components', to: '',
           globOptions: {
             ignore: ['**/*.js'],
-          }, }, 
-          { from: 'pelican_build', to: '', 
-          globOptions: {
-            ignore: ['**/*.js', '**/*.html'],
           },}, 
+          // { from: 'pelican_build', to: '', 
+          // globOptions: {
+          //   ignore: ['**/*.js', '**/*.html'],
+          // },}, 
         ],
       }),
       new MiniCssExtractPlugin({
@@ -122,12 +122,14 @@ async function configureWebpack() {
         filename: 'index.html',
         chunks: ["vendor", "navbar", "main"],
       }),
-      new HtmlWebpackPlugin({
-        template: "public/test_html/test.html",
-        filename: 'test.html',
-        chunks: ["vendor", "navbar"],
-      }),
-    ].concat(multipleHtmlPlugins),
+      // new HtmlWebpackPlugin({
+      //   template: "public/test_html/test.html",
+      //   filename: 'test.html',
+      //   chunks: ["vendor", "navbar"],
+      // }),
+    ]
+    // .concat(multipleHtmlPlugins)
+    ,
     stats: {
       modules: true,
     },

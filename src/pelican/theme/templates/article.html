@@ -1,15 +1,21 @@
 {% extends "base.html" %}
 
 {% block additional_includes %}
+  <!-- Article Template -->
   <style>
     @import url('{{ SITEURL }}/pages/GeneralStyle.css');
-    @import url('{{ SITEURL }}/index.css');
+    /* @import url('{{ SITEURL }}/index.css'); */
   </style>
+  <script defer="defer" src="/bundles/vendor/vendor.bundle.v1.0.0.js"></script>
+  <script defer="defer" src="/bundles/navbar/navbar.bundle.v1.0.0.js"></script>
+  
+  <link href="/index.css" rel="stylesheet">
+  <link href="/navbar.css" rel="stylesheet">
 {% endblock additional_includes%}
 
 {% block title %}{{ article.title|striptags }}{% endblock %}
 {% block content %}
-<div id="myNavBar"></div>
+<div id="myNavBar" bk-external="true"></div>
 <section class="general-content">
 <article>
         <header> <h1 class="entry-title"><a href="/{{ article.url }}"
